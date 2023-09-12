@@ -92,6 +92,7 @@ local specifications = {
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
     dependencies = require("plugins.telescope").get_deps(),
+    config = require("plugins.telescope").config,
   },
 
   {
