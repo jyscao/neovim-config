@@ -93,13 +93,16 @@ local specifications = {
     branch = '0.1.x',
     dependencies = require("plugins.telescope").get_deps(),
     config = require("plugins.telescope").config,
+    event = "VeryLazy",
   },
 
   {
     -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     dependencies = require("plugins.nvim-treesitter").get_deps(),
+    config = require("plugins.nvim-treesitter").config,
     build = ':TSUpdate',
+    event = "VeryLazy",
   },
 
   {
