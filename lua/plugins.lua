@@ -42,13 +42,13 @@ local specifications = {
   -- Useful plugin to show you pending keybinds.
   {
     'folke/which-key.nvim',
-    opts = require("plugins.which-key.nvim").get_opts(),
+    opts = require("plugins.which-key").get_opts(),
   },
 
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
-    opts = require("plugins.gitsigns.nvim").get_opts(),
+    opts = require("plugins.gitsigns").get_opts(),
   },
 
   {
@@ -64,7 +64,7 @@ local specifications = {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`
-    opts = require("plugins.lualine.nvim").get_opts(),
+    opts = require("plugins.lualine").get_opts(),
   },
 
   {
@@ -72,20 +72,20 @@ local specifications = {
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
-    opts = require("plugins.indent-blankline.nvim").get_opts(),
+    opts = require("plugins.indent-blankline").get_opts(),
   },
 
   -- "gc" to comment visual regions/lines
   {
     'numToStr/Comment.nvim',
-    opts = require("plugins.Comment.nvim").get_opts(),
+    opts = require("plugins.Comment").get_opts(),
   },
 
   -- Fuzzy Finder (files, lsp, etc)
   {
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
-    dependencies = require("plugins.telescope.nvim").get_deps(),
+    dependencies = require("plugins.telescope").get_deps(),
   },
 
   {
