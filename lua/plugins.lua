@@ -19,7 +19,13 @@ local specifications = {
   -- NOTE: First, some plugins that don't require any configuration
 
   -- Git related plugins
-  'tpope/vim-fugitive',
+  {
+    'tpope/vim-fugitive',
+    -- init = require("plugins.vim-ctrlspace").init,
+    config = require("plugins.vim-fugitive").config,
+    -- event = "VeryLazy",
+    keys = "<leader>g",
+  },
   'tpope/vim-rhubarb',
 
   -- Detect tabstop and shiftwidth automatically
@@ -99,7 +105,8 @@ local specifications = {
     "vim-ctrlspace/vim-ctrlspace",
     init = require("plugins.vim-ctrlspace").init,
     config = require("plugins.vim-ctrlspace").config,
-    keys = "<C-Space>",
+    event = "VeryLazy",
+    -- keys = "<C-Space>",
   },  -- FIX: CtrlSpace window's display (status line) is busted
 
 }
