@@ -1,7 +1,7 @@
 -- [[ Basic Keymaps ]]
 
 -- back to normal
-vim.keymap.set({ 'i', 'v', 'o' }, 'jk', '<Esc>', { silent = true })   -- Insert, Replace, Visual, Select, Operator-pending modes
+vim.keymap.set({ 'i', 'o' }, 'jk', '<Esc>', { silent = true })   -- Insert, Replace & Operator-pending modes
 vim.keymap.set( 'c', 'jk', '<C-c>', { silent = true })    -- Cmdline mode
 vim.keymap.set( 't', 'jk', '<C-\\><C-n>', { silent = true })    -- Terminal mode
 
