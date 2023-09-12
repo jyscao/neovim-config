@@ -44,7 +44,9 @@ local specifications = {
   {
     -- Autocompletion
     'hrsh7th/nvim-cmp',
-    dependencies =  require("plugins.nvim-cmp").get_deps()
+    dependencies =  require("plugins.nvim-cmp").get_deps(),
+    config = require("plugins.nvim-cmp").config,
+    event = "VeryLazy",
   },
 
   -- Useful plugin to show you pending keybinds.
