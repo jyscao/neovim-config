@@ -189,6 +189,9 @@ require('lazy').setup({
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
 
+vim.o.wrap = false
+vim.o.showtabline = 0
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
@@ -227,6 +230,17 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
 
 -- [[ Basic Keymaps ]]
+
+-- back to normal
+vim.keymap.set({ 'i', 'v', 'o' }, 'jk', '<Esc>', { silent = true })   -- Insert, Replace, Visual, Select, Operator-pending modes
+vim.keymap.set( 'c', 'jk', '<C-c>', { silent = true })    -- Cmdline mode
+vim.keymap.set( 't', 'jk', '<C-\\><C-n>', { silent = true })    -- Terminal mode
+
+-- easier window switching
+vim.keymap.set('n', '<C-h>', '<C-w>h')
+vim.keymap.set('n', '<C-j>', '<C-w>j')
+vim.keymap.set('n', '<C-k>', '<C-w>k')
+vim.keymap.set('n', '<C-l>', '<C-w>l')
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
@@ -383,7 +397,7 @@ local on_attach = function(_, bufnr)
 
   -- See `:help K` for why this keymap
   nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
-  nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
+  nmap('<C-S-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
   -- Lesser used LSP functionality
   nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
