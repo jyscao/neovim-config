@@ -14,12 +14,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- NOTE: Here is where you install your plugins.
---  You can configure plugins using the `config` key.
---
---  You can also configure plugins after the setup call,
---    as they will be available in your neovim runtime.
-require('lazy').setup({
+
+local specifications = {
   -- NOTE: First, some plugins that don't require any configuration
 
   -- Git related plugins
@@ -164,11 +160,14 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
-  -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
-  --    You can use this folder to prevent any conflicts with this init.lua if you're interested in keeping
-  --    up-to-date with whatever is in the kickstart repo.
-  --    Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  --
-  --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
-  { import = 'custom.plugins' },
-}, {})
+  {
+    "vim-ctrlspace/vim-ctrlspace",
+    init = require("plugins.vim-ctrlspace").init,
+    config = require("plugins.vim-ctrlspace").config,
+    keys = "<C-Space>",
+  },  -- FIX: CtrlSpace window's display (status line) is busted
+
+}
+
+
+require('lazy').setup(specifications, {})
