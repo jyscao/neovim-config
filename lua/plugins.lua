@@ -119,5 +119,11 @@ local specifications = {
 
 }
 
+local lazy_opts = {
+  ui = {
+    border = "rounded",
+    title = "Plugin Manager",
+  },
+}
 
-require('lazy').setup(specifications, {})
+require('lazy').setup(specifications, lazy_opts)
