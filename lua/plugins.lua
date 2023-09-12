@@ -36,7 +36,9 @@ local specifications = {
   {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
-    dependencies =  require("plugins.nvim-lspconfig").get_deps()
+    dependencies =  require("plugins.nvim-lspconfig").get_deps(),
+    config = require("plugins.nvim-lspconfig").config,
+    event = { "BufRead", "BufNewFile" },
   },
 
   {
