@@ -36,14 +36,7 @@ local specifications = {
   -- Adds git related signs to the gutter, as well as utilities for managing changes
   _("lewis6991/gitsigns.nvim"),
 
-  {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'onedark'
-    end,
-  },
+  _("navarasu/onedark.nvim"),   -- Theme inspired by Atom
 
   _("nvim-lualine/lualine.nvim"),   -- Set lualine as statusline, `:help lualine.txt`
 
