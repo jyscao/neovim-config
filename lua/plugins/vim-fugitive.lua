@@ -29,4 +29,7 @@ end
 --   }, {}
 -- )
 
+-- S.event = "VeryLazy"
+S.keys = "<leader>g"
+
 return S

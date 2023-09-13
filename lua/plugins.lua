@@ -14,19 +14,12 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local _ = require("utils").get_plugin_spec_table
 
 local specifications = {
-  -- NOTE: First, some plugins that don't require any configuration
-
   -- Git related plugins
-  {
-    'tpope/vim-fugitive',
-    -- init = require("plugins.vim-ctrlspace").init,
-    config = require("plugins.vim-fugitive").config,
-    -- event = "VeryLazy",
-    keys = "<leader>g",
-  },
-  'tpope/vim-rhubarb',
+  _("tpope/vim-fugitive"),
+  _("tpope/vim-rhubarb"),
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
