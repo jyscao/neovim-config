@@ -6,14 +6,15 @@ local S = {}
 function S.config()
   -- set keymaps
   local keymap = vim.keymap
-  keymap.set("n", "<leader>gs", "<cmd>Git<cr>", { desc = "Git status" })
-  keymap.set("n", "<leader>gd", "<cmd>Gdiffsplit<cr>", { desc = "Git diff" })
-  keymap.set("n", "<leader>gw", "<cmd>Gwrite<cr>", { desc = "Git add" })
-  keymap.set("n", "<leader>gc", "<cmd>Git commit<cr>", { desc = "Git commit" })
-  keymap.set("n", "<leader>gl", "<cmd>Gclog<cr>", { desc = "Git log --oneline" })
-  -- keymap.set("n", "<leader>gpl", "<cmd>Git pull<cr>", { desc = "Git pull" })
-  keymap.set("n", "<leader>gp", "<cmd>15 split|term git push<cr>", { desc = "Git push" })
-  keymap.set("n", "<leader>gb", "<cmd>Git blame<cr>", { desc = "Git blame" })
+  keymap.set("n", "<leader>gs", "<cmd>Git<CR>", { desc = "Git status" })
+  keymap.set("n", "<leader>gd", "<cmd>Gdiffsplit<CR>", { desc = "Gdiffsplit" })
+  keymap.set("n", "<leader>gw", "<cmd>Gread<CR>", { desc = "Gread" })
+  keymap.set("n", "<leader>gw", "<cmd>Gwrite<CR>", { desc = "Gwrite" })
+  keymap.set("n", "<leader>gc", "<cmd>Git commit<CR>", { desc = "Git commit" })
+  keymap.set("n", "<leader>gl", "<cmd>Gclog<CR>", { desc = "Git log" })
+  keymap.set("n", "<leader>gp", "<cmd>Git push<CR>", { desc = "Git push" })
+  keymap.set("n", "<leader>gb", "<cmd>Git blame<CR>", { desc = "Git blame" })
+  keymap.set("n", "<leader>gB", "<cmd>GBrowse<CR>", { desc = "Open in GitHub" })
 
   -- -- convert git to Git in command line mode
   -- vim.fn['utils#Cabbrev']('git', 'Git')
@@ -24,7 +25,7 @@ end
 --   {
 --     g = {
 --       name = "Git",
---       s = {"<cmd>Git<cr>", "Git status"}
+--       s = {"<cmd>Git<CR>", "Git status"}
 --     }
 --   }, {}
 -- )
