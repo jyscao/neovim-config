@@ -30,9 +30,11 @@ local lazy_spec_properties = {
 }
 
 local function load_plugin_spec_module(plugin_name)
-  local slash_idx = string.find(plugin_name, "/")
-  local base_name = string.sub(plugin_name, slash_idx + 1)
-  return require("plugins." .. base_name)
+  local i = string.find(plugin_name, "/") + 1
+  local dot_nvim_pos = string.find(plugin_name, "%.nvim")
+  local j = dot_nvim_pos and (dot_nvim_pos - 1) or -1
+  local stripped_name = string.sub(plugin_name, i, j)
+  return require("plugins." .. stripped_name)
 end
 
 local function assign_spec_properties(plugin_spec)

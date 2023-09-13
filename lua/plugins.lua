@@ -31,16 +31,10 @@ local specifications = {
   _("hrsh7th/nvim-cmp"),    -- Autocompletion
 
   -- Useful plugin to show you pending keybinds.
-  {
-    'folke/which-key.nvim',
-    opts = require("plugins.which-key").get_opts(),
-  },
+  _("folke/which-key.nvim"),
 
-  {
-    -- Adds git related signs to the gutter, as well as utilities for managing changes
-    'lewis6991/gitsigns.nvim',
-    opts = require("plugins.gitsigns").get_opts(),
-  },
+  -- Adds git related signs to the gutter, as well as utilities for managing changes
+  _("lewis6991/gitsigns.nvim"),
 
   {
     -- Theme inspired by Atom

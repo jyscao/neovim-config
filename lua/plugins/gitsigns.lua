@@ -1,24 +1,6 @@
 local S = {}
-local l = {}
 
--- function S.init()
--- end
-
-function S.get_opts()
-  return {
-    -- See `:help gitsigns.txt`
-    signs = {
-      add = { text = '+' },
-      change = { text = '~' },
-      delete = { text = '_' },
-      topdelete = { text = '‾' },
-      changedelete = { text = '~' },
-    },
-    on_attach = l._on_attach,
-  }
-end
-
-function l._on_attach(bufnr)
+local function _on_attach(bufnr)
   vim.keymap.set('n', '<leader>hp', require('gitsigns').preview_hunk, { buffer = bufnr, desc = 'Preview git hunk' })
 
   -- don't override the built-in and fugitive keymaps
@@ -35,6 +17,21 @@ function l._on_attach(bufnr)
     return '<Ignore>'
   end, {expr=true, buffer = bufnr, desc = "Jump to previous hunk"})
 end
+
+-- function S.init()
+-- end
+
+S.opts = {
+  -- See `:help gitsigns.txt`
+  signs = {
+    add = { text = '+' },
+    change = { text = '~' },
+    delete = { text = '_' },
+    topdelete = { text = '‾' },
+    changedelete = { text = '~' },
+  },
+  on_attach = _on_attach,
+}
 
 -- function S.config()
 -- end
