@@ -26,21 +26,9 @@ local specifications = {
 
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
-  {
-    -- LSP Configuration & Plugins
-    'neovim/nvim-lspconfig',
-    dependencies =  require("plugins.nvim-lspconfig").get_deps(),
-    config = require("plugins.nvim-lspconfig").config,
-    event = { "BufRead", "BufNewFile" },
-  },
+  _("neovim/nvim-lspconfig"),
 
-  {
-    -- Autocompletion
-    'hrsh7th/nvim-cmp',
-    dependencies =  require("plugins.nvim-cmp").get_deps(),
-    config = require("plugins.nvim-cmp").config,
-    event = "VeryLazy",
-  },
+  _("hrsh7th/nvim-cmp"),    -- Autocompletion
 
   -- Useful plugin to show you pending keybinds.
   {
