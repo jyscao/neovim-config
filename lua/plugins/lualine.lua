@@ -3,16 +3,14 @@ local S = {}
 -- function S.init()
 -- end
 
-function S.get_opts()
-  return {
-    options = {
-      icons_enabled = false,
-      theme = 'onedark',
-      component_separators = '|',
-      section_separators = '',
-    },
-  }
-end
+S.opts = {
+  options = {
+    icons_enabled = false,
+    theme = 'onedark',
+    component_separators = '|',
+    section_separators = '',
+  },
+}
 
 -- function S.config()
 -- end

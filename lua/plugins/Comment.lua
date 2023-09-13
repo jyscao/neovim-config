@@ -3,10 +3,8 @@ local S = {}
 -- function S.init()
 -- end
 
-function S.get_opts()
-  return {
-  }
-end
+S.opts = {
+}
 
 -- function S.config()
 -- end

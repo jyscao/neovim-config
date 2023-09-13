@@ -3,11 +3,9 @@ local S = {}
 -- function S.init()
 -- end
 
-function S.get_deps()
-  return {
-    'nvim-treesitter/nvim-treesitter-textobjects',
-  }
-end
+S.dependencies = {
+  'nvim-treesitter/nvim-treesitter-textobjects',
+}
 
 -- [[ Configure Treesitter ]]
 function S.config()
@@ -82,5 +80,8 @@ function S.config()
   vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
   vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 end
+
+S.build = ':TSUpdate'
+S.event = "VeryLazy"
 
 return S

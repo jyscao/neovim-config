@@ -45,52 +45,22 @@ local specifications = {
     end,
   },
 
-  {
-    -- Set lualine as statusline
-    'nvim-lualine/lualine.nvim',
-    -- See `:help lualine.txt`
-    opts = require("plugins.lualine").get_opts(),
-  },
+  _("nvim-lualine/lualine.nvim"),   -- Set lualine as statusline, `:help lualine.txt`
 
-  {
-    -- Add indentation guides even on blank lines
-    'lukas-reineke/indent-blankline.nvim',
-    -- Enable `lukas-reineke/indent-blankline.nvim`
-    -- See `:help indent_blankline.txt`
-    opts = require("plugins.indent-blankline").get_opts(),
-  },
+  -- Add indentation guides even on blank lines
+  _("lukas-reineke/indent-blankline.nvim"),   -- See `:help indent_blankline.txt`
 
   -- "gc" to comment visual regions/lines
-  {
-    'numToStr/Comment.nvim',
-    opts = require("plugins.Comment").get_opts(),
-  },
+  _("numToStr/Comment.nvim"),
 
   -- Fuzzy Finder (files, lsp, etc)
-  {
-    'nvim-telescope/telescope.nvim',
-    branch = '0.1.x',
-    dependencies = require("plugins.telescope").get_deps(),
-    config = require("plugins.telescope").config,
-    event = "VeryLazy",
-  },
+  _("nvim-telescope/telescope.nvim"),
 
-  {
-    -- Highlight, edit, and navigate code
-    'nvim-treesitter/nvim-treesitter',
-    dependencies = require("plugins.nvim-treesitter").get_deps(),
-    config = require("plugins.nvim-treesitter").config,
-    build = ':TSUpdate',
-    event = "VeryLazy",
-  },
+  -- Highlight, edit, and navigate code
+  _("nvim-treesitter/nvim-treesitter"),
 
-  {
-    "vim-ctrlspace/vim-ctrlspace",
-    init = require("plugins.vim-ctrlspace").init,
-    config = require("plugins.vim-ctrlspace").config,
-    event = "VeryLazy",
-    -- keys = "<C-Space>",
-  },  -- FIX: CtrlSpace window's display (status line) is busted
+  -- TODO/FIX: CtrlSpace window's display (status line) is busted
+  _("vim-ctrlspace/vim-ctrlspace"),
 
 }
 

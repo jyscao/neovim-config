@@ -3,12 +3,10 @@ local S = {}
 -- function S.init()
 -- end
 
-function S.get_opts()
-  return {
-    char = '┊',
-    show_trailing_blankline_indent = false,
-  }
-end
+S.opts = {
+  char = '┊',
+  show_trailing_blankline_indent = false,
+}
 
 -- function S.config()
 -- end
