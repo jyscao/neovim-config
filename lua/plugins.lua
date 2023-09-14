@@ -17,6 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 local _ = require("utils").get_plugin_spec_table
 
 local specifications = {
+
   -- [[ Git Integrations ]]
   _("tpope/vim-fugitive"),	-- Git wrapper
   _("tpope/vim-rhubarb"),	-- GitHub extension for vim-fugitive
@@ -26,6 +27,7 @@ local specifications = {
   _("AndrewRadev/linediff.vim"),-- Perform diffs on blocks of code
   _("numToStr/Comment.nvim"),	-- Comment plugin that supports treesitter
   _("junegunn/vim-easy-align"),	-- Vim text alignment plugin
+  _("echasnovski/mini.surround"),	-- Fast and feature-rich surround actions
 
   -- [[ IDE Core ]]
   _("neovim/nvim-lspconfig"),	-- LSP
