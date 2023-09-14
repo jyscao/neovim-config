@@ -36,4 +36,6 @@ S.opts = {
 -- function S.config()
 -- end
 
+S.event = { "BufReadPre", "BufNewFile" }
+
 return S

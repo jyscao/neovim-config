@@ -11,7 +11,7 @@ S.dependencies = {
 -- end
 
 -- S.event = "VeryLazy"
--- S.cmd = "GBrowse"
-S.keys = "<leader>g"
+S.cmd = "GBrowse"
+-- S.keys = "<leader>g"
 
 return S

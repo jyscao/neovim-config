@@ -1,5 +1,7 @@
 local S = {}
 
+S.lazy = false
+
 -- function S.init()
 -- end
 

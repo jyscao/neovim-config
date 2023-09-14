@@ -82,6 +82,7 @@ function S.config()
 end
 
 S.build = ':TSUpdate'
-S.event = "VeryLazy"
+-- S.event = "VeryLazy"
+S.event = { "BufReadPost", "BufNewFile" }
 
 return S

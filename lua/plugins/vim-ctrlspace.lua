@@ -12,7 +12,9 @@ function S.config()
   vim.keymap.set("n", "<C-Space>", "<cmd>CtrlSpace<CR>", { silent = true })
 end
 
-S.event = "VeryLazy"
+S.event = { "BufWinEnter" }
+-- S.event = "VeryLazy"
+-- S.cmd = "CtrlSpace"
 -- S.keys = "<C-Space>"
 
 return S
