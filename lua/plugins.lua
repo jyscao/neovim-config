@@ -25,6 +25,7 @@ local specifications = {
   -- [[ Editing Improvements ]]
   _("AndrewRadev/linediff.vim"),-- Perform diffs on blocks of code
   _("numToStr/Comment.nvim"),	-- Comment plugin that supports treesitter
+  _("junegunn/vim-easy-align"),	-- Vim text alignment plugin
 
   -- [[ IDE Core ]]
   _("neovim/nvim-lspconfig"),	-- LSP
