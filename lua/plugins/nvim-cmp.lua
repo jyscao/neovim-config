@@ -66,6 +66,6 @@ function S.config()
 
 end
 
-S.event = "VeryLazy"
+S.event = "InsertEnter"
 
 return S
