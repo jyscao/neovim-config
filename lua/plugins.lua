@@ -18,12 +18,15 @@ local _ = require("utils").get_plugin_spec_table
 
 local specifications = {
   -- Git related plugins
-  _("tpope/vim-fugitive"),
-  _("tpope/vim-rhubarb"),
+  _("tpope/vim-fugitive"),	-- Git wrapper
+  _("tpope/vim-rhubarb"),	-- GitHub extension for vim-fugitive
 
-  -- Detect tabstop and shiftwidth automatically
-  -- 'tpope/vim-sleuth',
-  "tpope/vim-rsi",
+  -- 'tpope/vim-sleuth',	-- Automatically adjusts 'shiftwidth' & 'expandtab' based on heuristics
+  _("tpope/vim-rsi"),		-- Readline style insertion
+  _("tpope/vim-eunuch"),	-- Helpers for UNIX
+  _("tpope/vim-scriptease"),	-- A Vim plugin for Vim plugins
+
+  _("AndrewRadev/linediff.vim"),	-- Perform diffs on blocks of code
 
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
@@ -38,7 +41,8 @@ local specifications = {
   _("lewis6991/gitsigns.nvim"),
 
   _("navarasu/onedark.nvim"),   -- Theme inspired by Atom
-  -- _("folke/tokyonight.nvim"),   -- A clean, dark Neovim theme
+  -- _("folke/tokyonight.nvim"),	-- A clean, dark Neovim theme
+  -- _("catppuccin/nvim"),		-- Soothing pastel theme for (Neo)vim
 
   _("nvim-lualine/lualine.nvim"),   -- Set lualine as statusline, `:help lualine.txt`
 

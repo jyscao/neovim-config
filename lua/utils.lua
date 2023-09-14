@@ -29,12 +29,28 @@ local lazy_spec_properties = {
   "optional",
 }
 
-local function load_plugin_spec_module(plugin_name)
-  local i = string.find(plugin_name, "/") + 1
+local function get_dot_pos(plugin_name)
   local dot_nvim_pos = string.find(plugin_name, "%.nvim")
-  local j = dot_nvim_pos and (dot_nvim_pos - 1) or -1
-  local stripped_name = string.sub(plugin_name, i, j)
-  return require("plugins." .. stripped_name)
+  local dot_vim_pos = string.find(plugin_name, "%.vim")
+  return dot_nvim_pos or dot_vim_pos or nil	-- NOTE: this implicitly assumes a plugin name does not have both .nvim and .vim simultaneously
+end
+
+local function get_plugin_stripped_name(plugin_name)
+  local i = string.find(plugin_name, "/") + 1
+  local dot_pos = get_dot_pos(plugin_name)
+  local j = dot_pos and (dot_pos - 1) or -1
+  return string.sub(plugin_name, i, j)
+end
+
+local function load_plugin_spec_module(plugin_name)
+  local stripped_name = get_plugin_stripped_name(plugin_name)
+  local plugin_spec_modname = "plugins." .. stripped_name
+  local status, spec_module = pcall(require, plugin_spec_modname)
+  if status then
+    return spec_module
+  else
+    return require("plugins._default-spec_")
+  end
 end
 
 local function assign_spec_properties(plugin_spec)
