@@ -61,6 +61,9 @@ local specifications = {
   -- TODO/FIX: CtrlSpace window's display (status line) is busted
   _("vim-ctrlspace/vim-ctrlspace"),
 
+
+  _("willothy/flatten.nvim"),	-- Open files & command output in current neovim instance
+
 }
 
 local lazy_opts = {
