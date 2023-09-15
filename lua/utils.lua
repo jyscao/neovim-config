@@ -49,7 +49,7 @@ local function load_plugin_spec_module(plugin_name)
   if status then
     return spec_module
   else
-    return require("plugins._default-spec_")
+    return require("plugins._default_spec")
   end
 end
 
