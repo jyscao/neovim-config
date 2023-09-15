@@ -6,6 +6,7 @@ vim.o.wrap = false
 vim.o.showtabline = 0
 vim.o.relativenumber = true
 vim.o.shiftwidth = 2
+vim.o.showmode = false
 
 -- Set highlight on search
 vim.o.hlsearch = false
