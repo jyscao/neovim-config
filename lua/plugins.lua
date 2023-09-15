@@ -59,6 +59,8 @@ local specifications = {
 
   -- TODO/FIX: CtrlSpace window's display (status line) is busted
   _("vim-ctrlspace/vim-ctrlspace"),	-- Workspace Manager: buffers, tabs, files, workspace, bookmarks
+
+  _("epwalsh/obsidian.nvim"),	-- Complement to the Obsidian application
 }
 
 local lazy_opts = {
