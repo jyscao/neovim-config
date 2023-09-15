@@ -32,6 +32,6 @@ end
 
 S.cmd = "Git"
 -- S.event = "VeryLazy"
--- S.keys = "<leader>g"
+S.keys = "<leader>g"
 
 return S
