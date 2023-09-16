@@ -53,9 +53,14 @@ local specifications = {
 
   -- [[ UI Improvements ]]
   _("lukas-reineke/indent-blankline.nvim"),	-- Add indentation guides even on blank lines
+  -- _("karb94/neoscroll.nvim"),
 
   -- [[ Terminal Integrations ]]
   _("willothy/flatten.nvim"),	-- Open files & command output in current neovim instance
+
+  -- [[ Register Improvements ]]
+  _("gennaro-tedesco/nvim-peekup"),
+  _("tenxsoydev/karen-yank.nvim"),
 
 
 
