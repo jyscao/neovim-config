@@ -2,6 +2,9 @@ require("globals")
 
 require("plugins")
 
+-- [[ Neovim's diagnostic framework]]
+require("diagnostics")
+
 -- [[ Setting options ]]
 require("options")
 
