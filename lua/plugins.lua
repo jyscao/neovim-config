@@ -35,7 +35,7 @@ local specifications = {
   _("ggandor/flit.nvim"),
   -- _("smoka7/hop.nvim"),
   -- _("rlane/pounce.nvim"),
-
+  _("chrisgrieser/nvim-spider"),	-- Move by subwords and skip insignificant punctuation
 
   -- [[ IDE Core ]]
   _("neovim/nvim-lspconfig"),	-- LSP
@@ -49,6 +49,7 @@ local specifications = {
   -- _("folke/tokyonight.nvim"),	-- A clean, dark Neovim theme
   -- _("catppuccin/nvim"),		-- Soothing pastel theme for (Neo)vim
   _("nvim-lualine/lualine.nvim"),	-- Set lualine as statusline, `:help lualine.txt`
+  -- _("nvim-tree/nvim-web-devicons"),
 
   -- [[ UI Improvements ]]
   _("lukas-reineke/indent-blankline.nvim"),	-- Add indentation guides even on blank lines
