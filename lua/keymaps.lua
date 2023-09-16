@@ -15,18 +15,18 @@ local function nmap(lhs, rhs, opts)
   map('n', lhs, rhs, opts)
 end
 
-local function nvmap(lhs, rhs, opts)
-  map({'n', 'v' }, lhs, rhs, opts)
+local function nxmap(lhs, rhs, opts)
+  map({ 'n', 'x' }, lhs, rhs, opts)
 end
 
 
 
 -- Disable anti-pattern and/or inconvenient keys
-nvmap('<Up>',    '<Nop>')
-nvmap('<Down>',  '<Nop>')
-nvmap('<Left>',  '<Nop>')
-nvmap('<Right>', '<Nop>')
-nvmap('<Space>', '<Nop>')
+nxmap('<Up>',    '<Nop>')
+nxmap('<Down>',  '<Nop>')
+nxmap('<Left>',  '<Nop>')
+nxmap('<Right>', '<Nop>')
+nxmap('<Space>', '<Nop>')
 
 -- Back to Normal mode
 map({ 'i', 'o' }, 'jk', '<Esc>'      )
@@ -44,8 +44,8 @@ nmap('k', "v:count == 0 ? 'gk' : 'k'", { expr = true })
 nmap('j', "v:count == 0 ? 'gj' : 'j'", { expr = true })
 
 -- Conveniences
-nvmap(';', ':', { silent = false, })	--  save a keystroke
--- nvmap(':', '<SOMETHING_USEFUL>', { silent = false, })
+nxmap(';', ':', { silent = false, })	--  save a keystroke
+-- nxmap(':', '<SOMETHING_USEFUL>', { silent = false, })
 -- nmap("<leader>fs", "<cmd>update<cr>", { desc = "save buffer" })
 -- nmap("<leader>wq", "<cmd>x<cr>",      { desc = "quit current window" })
 -- TODO: add :q command to quit Telescope w/o requiring :q!
