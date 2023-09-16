@@ -22,6 +22,7 @@ local specifications = {
   _("tpope/vim-fugitive"),	-- Git wrapper
   _("tpope/vim-rhubarb"),	-- GitHub extension for vim-fugitive
   _("lewis6991/gitsigns.nvim"),	-- Super fast git decorations in the sign-column
+  -- _("NeogitOrg/neogit"),
 
   -- [[ Editing Improvements ]]
   _("AndrewRadev/linediff.vim"),-- Perform diffs on blocks of code
@@ -57,11 +58,14 @@ local specifications = {
 
   -- [[ Terminal Integrations ]]
   _("willothy/flatten.nvim"),	-- Open files & command output in current neovim instance
+  -- _("akinsho/toggleterm.nvim"),
 
   -- [[ Register Improvements ]]
   _("gennaro-tedesco/nvim-peekup"),
   _("tenxsoydev/karen-yank.nvim"),
 
+  -- [[ External Integrations ]]
+  _("epwalsh/obsidian.nvim"),	-- Complement to the Obsidian application
 
 
   -- [[ New Plugins -> to be organized]]
@@ -74,7 +78,8 @@ local specifications = {
   -- TODO/FIX: CtrlSpace window's display (status line) is busted
   _("vim-ctrlspace/vim-ctrlspace"),	-- Workspace Manager: buffers, tabs, files, workspace, bookmarks
 
-  _("epwalsh/obsidian.nvim"),	-- Complement to the Obsidian application
+  -- _("kevinhwang91/nvim-bqf"),	-- Better quickfix window in Neovim
+  -- _("folke/trouble.nvim"),
 }
 
 local lazy_opts = {
