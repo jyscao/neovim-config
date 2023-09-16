@@ -29,6 +29,13 @@ local specifications = {
   _("junegunn/vim-easy-align"),	-- Vim text alignment plugin
   _("echasnovski/mini.surround"),	-- Fast and feature-rich surround actions
 
+  -- [[ Motion Improvements ]]
+  _("ggandor/leap.nvim"),
+  _("ggandor/flit.nvim"),
+  -- _("smoka7/hop.nvim"),
+  -- _("rlane/pounce.nvim"),
+
+
   -- [[ IDE Core ]]
   _("neovim/nvim-lspconfig"),	-- LSP
   _("hrsh7th/nvim-cmp"),   	-- Autocompletion
