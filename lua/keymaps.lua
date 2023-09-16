@@ -1,25 +1,51 @@
--- [[ Basic Keymaps ]]
+-----------------------------------------------------------
+-- Define basic keymaps for Neovim
+-----------------------------------------------------------
 
--- back to normal
-vim.keymap.set({ 'i', 'o' }, 'jk', '<Esc>', { silent = true })   -- Insert, Replace & Operator-pending modes
-vim.keymap.set( 'c', 'jk', '<C-c>', { silent = true })    -- Cmdline mode
-vim.keymap.set( 't', 'jk', '<C-\\><C-n>', { silent = true })    -- Terminal mode
+-- Helpers for defining keymaps
+local function map(mode, lhs, rhs, opts)
+  local options = { noremap = true, silent = true, }
+  if opts then
+    options = vim.tbl_extend('force', options, opts)
+  end
+  vim.keymap.set(mode, lhs, rhs, options)
+end
 
--- conveniences
-vim.keymap.set({ "n", "v" }, ";", ":")
-vim.keymap.set("n", "<leader>fs", "<cmd>update<cr>", { silent = true, desc = "save buffer" })
-vim.keymap.set("n", "<leader>wq", "<cmd>x<cr>", { silent = true, desc = "quit current window" })
+local function nmap(lhs, rhs, opts)
+  map('n', lhs, rhs, opts)
+end
 
--- easier window switching
-vim.keymap.set('n', '<C-h>', '<C-w>h')
-vim.keymap.set('n', '<C-j>', '<C-w>j')
-vim.keymap.set('n', '<C-k>', '<C-w>k')
-vim.keymap.set('n', '<C-l>', '<C-w>l')
+local function nvmap(lhs, rhs, opts)
+  map({'n', 'v' }, lhs, rhs, opts)
+end
 
--- Keymaps for better default experience
--- See `:help vim.keymap.set()`
-vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+
+
+-- Disable anti-pattern and/or inconvenient keys
+nvmap('<Up>',    '<Nop>')
+nvmap('<Down>',  '<Nop>')
+nvmap('<Left>',  '<Nop>')
+nvmap('<Right>', '<Nop>')
+nvmap('<Space>', '<Nop>')
+
+-- Back to Normal mode
+map({ 'i', 'o' }, 'jk', '<Esc>'      )
+map( 'c',         'jk', '<C-c>'      )
+map( 't',         'jk', '<C-\\><C-n>')
+
+-- Better splits navigation
+nmap('<C-h>', '<C-w>h')
+nmap('<C-j>', '<C-w>j')
+nmap('<C-k>', '<C-w>k')
+nmap('<C-l>', '<C-w>l')
 
 -- Remap for dealing with word wrap
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+nmap('k', "v:count == 0 ? 'gk' : 'k'", { expr = true })
+nmap('j', "v:count == 0 ? 'gj' : 'j'", { expr = true })
+
+-- Conveniences
+nvmap(';', ':', { silent = false, })	--  save a keystroke
+-- nvmap(':', '<SOMETHING_USEFUL>', { silent = false, })
+-- nmap("<leader>fs", "<cmd>update<cr>", { desc = "save buffer" })
+-- nmap("<leader>wq", "<cmd>x<cr>",      { desc = "quit current window" })
+-- TODO: add :q command to quit Telescope w/o requiring :q!
