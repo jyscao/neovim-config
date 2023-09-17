@@ -28,23 +28,28 @@ nxmap('<Left>',  '<Nop>')
 nxmap('<Right>', '<Nop>')
 nxmap('<Space>', '<Nop>')
 
--- Back to Normal mode
+-- Back to NORMAL
 map({ 'i', 'o' }, 'jk', '<Esc>'      )
 map( 'c',         'jk', '<C-c>'      )
 map( 't',         'jk', '<C-\\><C-n>')
 
--- Better splits navigation
+-- Better splits
 nmap('<C-h>', '<C-w>h')
 nmap('<C-j>', '<C-w>j')
 nmap('<C-k>', '<C-w>k')
 nmap('<C-l>', '<C-w>l')
+nmap('<C-w><C-t>', function()
+  return ({ col = '<C-w>t<C-w>H', row = '<C-w>t<C-w>K', })[vim.fn.winlayout()[1]]
+end, { expr = true,  desc = "Transpose splits" })
+-- TODO: add transposes & flips (<C-w><C-r>) with >2 splits
 
 -- Remap for dealing with word wrap
 nmap('k', "v:count == 0 ? 'gk' : 'k'", { expr = true })
 nmap('j', "v:count == 0 ? 'gj' : 'j'", { expr = true })
 
 -- Conveniences
-nxmap(';', ':', { silent = false, })	--  save a keystroke
+nxmap(';', ':', { silent = false, })	-- enter Cmdline-mode with ;
+-- nmap("<C-s>", "<Cmd>update<CR>", { desc = "Save buffer if modified" })
 -- nxmap(':', '<SOMETHING_USEFUL>', { silent = false, })
 -- nmap("<leader>fs", "<cmd>update<cr>", { desc = "save buffer" })
 -- nmap("<leader>wq", "<cmd>x<cr>",      { desc = "quit current window" })
