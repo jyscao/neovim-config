@@ -34,8 +34,8 @@ local specifications = {
   _("windwp/nvim-autopairs"),	-- Powerful autopair plugin that supports multiple characters
 
   -- [[ Motion Improvements ]]
-  _("ggandor/leap.nvim"),
-  _("ggandor/flit.nvim"),
+  _("ggandor/leap.nvim"),	-- Motion plugin building & improving on vim-sneak
+  _("ggandor/flit.nvim"),	-- Enhanced f/t motions for Leap
   -- _("smoka7/hop.nvim"),
   -- _("rlane/pounce.nvim"),
   _("chrisgrieser/nvim-spider"),	-- Move by subwords and skip insignificant punctuation
@@ -64,8 +64,8 @@ local specifications = {
   -- _("akinsho/toggleterm.nvim"),
 
   -- [[ Register Improvements ]]
-  _("gennaro-tedesco/nvim-peekup"),
-  _("tenxsoydev/karen-yank.nvim"),
+  _("gennaro-tedesco/nvim-peekup"),	-- Dynamically interact with vim registers
+  _("tenxsoydev/karen-yank.nvim"),	-- Improve register handling with delete, cut & yank
 
   -- [[ External Integrations ]]
   _("epwalsh/obsidian.nvim"),	-- Complement to the Obsidian application
