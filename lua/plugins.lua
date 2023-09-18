@@ -30,6 +30,8 @@ local specifications = {
   _("junegunn/vim-easy-align"),	-- Vim text alignment plugin
   _("kylechui/nvim-surround"),	-- Add/change/delete surrounding delimiter pairs with ease
   -- _("echasnovski/mini.surround"),	-- Fast and feature-rich surround actions
+  _("utilyre/sentiment.nvim"),	-- Enhanced matchparen.vim
+  _("windwp/nvim-autopairs"),	-- Powerful autopair plugin that supports multiple characters
 
   -- [[ Motion Improvements ]]
   _("ggandor/leap.nvim"),
