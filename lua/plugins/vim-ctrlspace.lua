@@ -9,7 +9,7 @@ end
 
 function S.config()
   -- set CtrlSpace keymaps
-  vim.keymap.set("n", "<C-Space>", "<cmd>CtrlSpace<CR>", { silent = true })
+  vim.keymap.set("n", "<C-Space>", "<Cmd>CtrlSpace<CR>", { silent = true })
 end
 
 S.event = { "BufWinEnter" }

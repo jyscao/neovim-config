@@ -5,8 +5,8 @@ local S = {}
 
 function S.config()
   -- set keymaps
-  vim.keymap.set('x', '<leader>xa', "<Plug>(EasyAlign)", { noremap = false, silent = true })
-  vim.keymap.set('n', '<leader>xa', "<Plug>(EasyAlign)", { noremap = false, silent = true })
+  vim.keymap.set({ 'n', 'x' }, '<leader>xa', "<Plug>(EasyAlign)", { noremap = true, silent = true })
+  -- TODO: use helpers from keymaps.lua
 end
 
 -- S.cmd = "EasyAlign"
