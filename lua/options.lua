@@ -25,8 +25,12 @@ vim.o.wrap           = false    -- do not wrap lines longer than the window widt
 vim.o.breakindent    = true     -- maintain indentation level when wrapping lines
 -- vim.o.cursorline  = true     -- highlight line the cursor is on; see augroup 'cursorline_group'
 
--- Enable break indent
-vim.o.breakindent = true
+-- [[ Tabs & Indentation ]]     -- NOTE: this is also managed in part by tpope/vim-sleuth
+-- vim.o.tabstop  = 8           -- number of spaces <Tab> counts for; default is 8
+vim.o.softtabstop = 4           -- tabstop while editing; negative (w/ vim-sleuth) means shiftwidth value is used
+vim.o.shiftwidth  = 4           -- number of spaces to use for indentation (`>>` & `<<`)
+vim.o.shiftround  = true        -- round indent to multiple of shiftwidth
+vim.o.expandtab   = true        -- use appropriate number of spaces to insert <Tab> in Insert mode, and `>>` & `<<`
 
 -- [[ Display View ]]
 vim.o.splitright    = true      -- new window placed to the right of current

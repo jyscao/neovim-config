@@ -73,7 +73,7 @@ local specifications = {
 
   -- [[ New Plugins -> to be organized]]
   --
-  -- 'tpope/vim-sleuth',	-- Automatically adjusts 'shiftwidth' & 'expandtab' based on heuristics
+  _('tpope/vim-sleuth'),	-- Automatically adjusts 'shiftwidth' & 'expandtab' based on heuristics
   _("tpope/vim-rsi"),		-- Readline style insertion
   _("tpope/vim-eunuch"),	-- Helpers for UNIX
   _("tpope/vim-scriptease"),	-- A Vim plugin for Vim plugins
