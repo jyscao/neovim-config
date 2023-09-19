@@ -1,17 +1,19 @@
+-- [[ Set Global Variables ]]
 require("globals")
 
+-- [[ Set Options ]]
+require("options")
+
+-- [[ Load & Configure Plugins ]]
 require("plugins")
 
 -- [[ Neovim's diagnostic framework]]
 require("diagnostics")
 
--- [[ Setting options ]]
-require("options")
-
--- [[ Basic Keymaps ]]
+-- [[ Define Basic Keymaps ]]
 require("keymaps")
 
--- [[ Autocommands]]
+-- [[ Define Autocommands ]]
 require("autocmds")
 
 -- The line beneath this is called `modeline`. See `:help modeline`
