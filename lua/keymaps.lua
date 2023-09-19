@@ -49,8 +49,11 @@ nmap('j', "v:count == 0 ? 'gj' : 'j'", { expr = true })
 
 -- Conveniences
 nxmap(';', ':', { silent = false, })	-- enter Cmdline-mode with ;
+-- map({ 'n', 'x', 'o' }, ':', 'gE')       -- NOTE: mapped in config for nvim-spider
+
+-- TODO: create shortcut keymap for :noh to turn off hlsearch
+-- TODO: add :q command to quit Telescope w/o requiring :q!
+--
 -- nmap("<C-s>", "<Cmd>update<CR>", { desc = "Save buffer if modified" })
--- nxmap(':', '<SOMETHING_USEFUL>', { silent = false, })
 -- nmap("<leader>fs", "<cmd>update<cr>", { desc = "save buffer" })
 -- nmap("<leader>wq", "<cmd>x<cr>",      { desc = "quit current window" })
--- TODO: add :q command to quit Telescope w/o requiring :q!
