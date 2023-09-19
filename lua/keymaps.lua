@@ -18,22 +18,23 @@ end
 local function nxmap(lhs, rhs, opts)
   map({ 'n', 'x' }, lhs, rhs, opts)
 end
+-- TODO: move above helpers into util related module
 
 
 
--- Disable anti-pattern and/or inconvenient keys
+-- [[ Disable anti-pattern and/or inconveniences ]]
 nxmap('<Up>',    '<Nop>')
 nxmap('<Down>',  '<Nop>')
 nxmap('<Left>',  '<Nop>')
 nxmap('<Right>', '<Nop>')
 nxmap('<Space>', '<Nop>')
 
--- Back to NORMAL
+-- [[ Back to NORMAL ]]
 map({ 'i', 'o' }, 'jk', '<Esc>'      )
 map( 'c',         'jk', '<C-c>'      )
 map( 't',         'jk', '<C-\\><C-n>')
 
--- Better splits
+-- [[ Better splits ]]
 nmap('<C-h>', '<C-w>h')
 nmap('<C-j>', '<C-w>j')
 nmap('<C-k>', '<C-w>k')
@@ -43,11 +44,11 @@ nmap('<C-w><C-t>', function()
 end, { expr = true,  desc = "Transpose splits" })
 -- TODO: add transposes, flips & rotates (<C-w><C-r>) with >2 splits
 
--- Remap for dealing with word wrap
+-- [[ Remap for dealing with word wrap ]]
 nmap('k', "v:count == 0 ? 'gk' : 'k'", { expr = true })
 nmap('j', "v:count == 0 ? 'gj' : 'j'", { expr = true })
 
--- Conveniences
+-- [[ Conveniences ]]
 nxmap(';', ':', { silent = false, })	-- enter Cmdline-mode with ;
 -- map({ 'n', 'x', 'o' }, ':', 'gE')       -- NOTE: mapped in config for nvim-spider
 
