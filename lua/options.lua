@@ -16,7 +16,6 @@ vim.o.clipboard = 'unnamedplus' -- sync clipboard between OS & Neovim
 vim.o.termguicolors  = true     -- enable 24-bit RGB color in the terminal
 vim.o.showmode       = false    -- omit mode in command line, since status line shows it
 vim.o.showtabline    = 0        -- never show the tab line
-vim.o.cursorline     = true     -- highlight line the cursor is on
 vim.o.number         = true     -- print line number
 vim.o.relativenumber = true     -- show line number relative to cursor
 vim.o.signcolumn     = 'yes'    -- keep signcolumn by default
@@ -24,6 +23,7 @@ vim.o.colorcolumn    = '100'    -- column to highlight to help text alignment
 vim.o.synmaxcol      = 300      -- disable syntax highlighting after this column
 vim.o.wrap           = false    -- do not wrap lines longer than the window width
 vim.o.breakindent    = true     -- maintain indentation level when wrapping lines
+-- vim.o.cursorline  = true     -- highlight line the cursor is on; see augroup 'cursorline_group'
 
 -- Enable break indent
 vim.o.breakindent = true

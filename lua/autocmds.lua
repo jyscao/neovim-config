@@ -8,3 +8,20 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
+
+
+local cursorline_group = vim.api.nvim_create_augroup('CursorLine', { clear = true })
+vim.api.nvim_create_autocmd({ 'VimEnter', 'WinEnter', 'BufWinEnter'}, {
+  callback = function()
+    vim.wo.cursorline = true
+  end,
+  group = cursorline_group,
+  pattern = '*',
+})
+vim.api.nvim_create_autocmd({ 'WinLeave' }, {
+  callback = function()
+    vim.wo.cursorline = false
+  end,
+  group = cursorline_group,
+  pattern = '*',
+})
