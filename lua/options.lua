@@ -61,6 +61,6 @@ vim.o.pumheight   = 15
 -- [[ History & Persistence ]]
 vim.o.history   = 1000          -- number of commands & searches to remember
 vim.o.undofile  = true          -- stores undo history offline in file
--- vim.o.autoread  = true          --
+-- vim.o.autoread  = true       -- re-read file to get latest state if changed outside of Neovim
 vim.o.autowrite = true          -- ?
 vim.o.swapfile  = false         -- disable swap file generation

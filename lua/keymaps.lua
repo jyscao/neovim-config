@@ -49,10 +49,10 @@ nmap('k', "v:count == 0 ? 'gk' : 'k'", { expr = true })
 nmap('j', "v:count == 0 ? 'gj' : 'j'", { expr = true })
 
 -- [[ Conveniences ]]
+nmap('?', ':noh<CR>')			-- turn off search highlighting (don't need backwards search anyway since forwards search wraps-around)
 nxmap(';', ':', { silent = false, })	-- enter Cmdline-mode with ;
 -- map({ 'n', 'x', 'o' }, ':', 'gE')       -- NOTE: mapped in config for nvim-spider
 
--- TODO: create shortcut keymap for :noh to turn off hlsearch
 -- TODO: add :q command to quit Telescope w/o requiring :q!
 --
 -- nmap("<C-s>", "<Cmd>update<CR>", { desc = "Save buffer if modified" })
