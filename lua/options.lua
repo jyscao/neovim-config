@@ -56,7 +56,7 @@ vim.o.wildignore     = '.git,.hg,.svn,*.pyc,*.o,*.out,*.jpg,*.jpeg,*.png,*.gif,*
 
 -- [[ Completion Menu ]]
 vim.o.completeopt = 'menuone,noselect'
--- vim.o.pumheight = 
+vim.o.pumheight   = 15
 
 -- [[ History & Persistence ]]
 vim.o.history   = 1000          -- number of commands & searches to remember
