@@ -17,13 +17,13 @@ vim.o.termguicolors  = true     -- enable 24-bit RGB color in the terminal
 vim.o.showmode       = false    -- omit mode in command line, since status line shows it
 vim.o.showtabline    = 0        -- never show the tab line
 vim.o.number         = true     -- print line number
-vim.o.relativenumber = true     -- show line number relative to cursor
+vim.o.relativenumber = true     -- show line number relative to cursor; see augroup 'focused_window_group'
+vim.o.cursorline     = true     -- highlight line the cursor is on; see augroup 'focused_window_group'
 vim.o.signcolumn     = 'yes'    -- keep signcolumn by default
-vim.o.colorcolumn    = '100'    -- column to highlight to help text alignment
+vim.o.colorcolumn    = '100'    -- column to highlight for text alignment; see augroup 'focused_window_group'
 vim.o.synmaxcol      = 300      -- disable syntax highlighting after this column
 vim.o.wrap           = false    -- do not wrap lines longer than the window width
 vim.o.breakindent    = true     -- maintain indentation level when wrapping lines
--- vim.o.cursorline  = true     -- highlight line the cursor is on; see augroup 'cursorline_group'
 
 -- [[ Tabs & Indentation ]]     -- NOTE: this is also managed in part by tpope/vim-sleuth
 -- vim.o.tabstop  = 8           -- number of spaces <Tab> counts for; default is 8

@@ -10,18 +10,22 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 
-local cursorline_group = vim.api.nvim_create_augroup('CursorLine', { clear = true })
+local focused_window_group = vim.api.nvim_create_augroup('CursorLine', { clear = true })
 vim.api.nvim_create_autocmd({ 'VimEnter', 'WinEnter', 'BufWinEnter'}, {
   callback = function()
-    vim.wo.cursorline = true
+    vim.wo.cursorline     = true
+    vim.wo.colorcolumn    = '100'
+    vim.wo.relativenumber = true
   end,
-  group = cursorline_group,
+  group = focused_window_group,
   pattern = '*',
 })
 vim.api.nvim_create_autocmd({ 'WinLeave' }, {
   callback = function()
-    vim.wo.cursorline = false
+    vim.wo.cursorline     = false
+    vim.wo.colorcolumn    = ''
+    vim.wo.relativenumber = false
   end,
-  group = cursorline_group,
+  group = focused_window_group,
   pattern = '*',
 })
