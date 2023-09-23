@@ -8,6 +8,7 @@ function S.config()
   local keymap = vim.keymap
   keymap.set("n", "<leader>gs", "<cmd>Git<CR>", { desc = "Git status" })
   keymap.set("n", "<leader>gd", "<cmd>Gdiffsplit<CR>", { desc = "Gdiffsplit" })
+  keymap.set("n", "<leader>gD", "<cmd>Gvdiffsplit<CR>", { desc = "Gvdiffsplit" })
   keymap.set("n", "<leader>gr", "<cmd>Gread<CR>", { desc = "Gread" })
   keymap.set("n", "<leader>gw", "<cmd>Gwrite<CR>", { desc = "Gwrite" })
   keymap.set("n", "<leader>gc", "<cmd>Git commit<CR>", { desc = "Git commit" })
