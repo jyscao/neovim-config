@@ -70,4 +70,13 @@ function M.get_plugin_spec_table(plugin_name)
   return spec_table
 end
 
+function M.list_contains(list, elem)
+  for _, v in ipairs(list) do
+    if v == elem then
+    	return true
+    end
+  end
+  return false
+end
+
 return M
