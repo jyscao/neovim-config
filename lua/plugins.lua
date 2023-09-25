@@ -14,7 +14,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local _ = require("utils").get_plugin_spec_table
+local _ = require("utils.plugtools").get_plugin_spec_table
 
 local specifications = {
 
