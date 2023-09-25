@@ -14,7 +14,7 @@ local focused_win_excluded_ft = {'help', 'man',}
 local focused_window_group = vim.api.nvim_create_augroup('FocusedWindow', { clear = true })
 vim.api.nvim_create_autocmd({ 'VimEnter', 'WinEnter', 'BufWinEnter'}, {
   callback = function()
-    if not require("utils").list_contains(focused_win_excluded_ft, vim.bo.filetype) then
+    if not require("utils.itertools").list_contains(focused_win_excluded_ft, vim.bo.filetype) then
       vim.wo.colorcolumn    = '100'
       vim.wo.relativenumber = true
       -- if relativenumber is applied w/o filtering out help files, then
