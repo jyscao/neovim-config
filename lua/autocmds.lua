@@ -10,7 +10,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 
-local focused_win_excluded_ft = {'help', 'man',}
+local focused_win_excluded_ft = {'help', 'lspinfo', 'man',}
 local focused_window_group = vim.api.nvim_create_augroup('FocusedWindow', { clear = true })
 vim.api.nvim_create_autocmd({ 'VimEnter', 'WinEnter', 'BufWinEnter'}, {
   callback = function()
