@@ -4,18 +4,18 @@ local S = {}
 -- end
 
 function S.config()
+  local keymap = require("utils.keymap")
   -- set keymaps
-  local keymap = vim.keymap
-  keymap.set("n", "<leader>gs", "<cmd>Git<CR>", { desc = "Git status" })
-  keymap.set("n", "<leader>gd", "<cmd>Gdiffsplit<CR>", { desc = "Gdiffsplit" })
-  keymap.set("n", "<leader>gD", "<cmd>Gvdiffsplit<CR>", { desc = "Gvdiffsplit" })
-  keymap.set("n", "<leader>gr", "<cmd>Gread<CR>", { desc = "Gread" })
-  keymap.set("n", "<leader>gw", "<cmd>Gwrite<CR>", { desc = "Gwrite" })
-  keymap.set("n", "<leader>gc", "<cmd>Git commit<CR>", { desc = "Git commit" })
-  keymap.set("n", "<leader>gl", "<cmd>Gclog<CR>", { desc = "Git log" })
-  keymap.set("n", "<leader>gp", "<cmd>Git push<CR>", { desc = "Git push" })
-  keymap.set("n", "<leader>gb", "<cmd>Git blame<CR>", { desc = "Git blame" })
-  keymap.set("n", "<leader>gB", "<cmd>GBrowse<CR>", { desc = "Open in GitHub" })
+  keymap.n("<leader>gs" , "<cmd>Git<CR>"         , { desc = "Git status" })
+  keymap.n("<leader>gd" , "<cmd>Gdiffsplit<CR>"  , { desc = "Gdiffsplit" })
+  keymap.n("<leader>gD" , "<cmd>Gvdiffsplit<CR>" , { desc = "Gvdiffsplit" })
+  keymap.n("<leader>gr" , "<cmd>Gread<CR>"       , { desc = "Gread" })
+  keymap.n("<leader>gw" , "<cmd>Gwrite<CR>"      , { desc = "Gwrite" })
+  keymap.n("<leader>gc" , "<cmd>Git commit<CR>"  , { desc = "Git commit" })
+  keymap.n("<leader>gl" , "<cmd>Gclog<CR>"       , { desc = "Git log" })
+  keymap.n("<leader>gp" , "<cmd>Git push<CR>"    , { desc = "Git push" })
+  keymap.n("<leader>gb" , "<cmd>Git blame<CR>"   , { desc = "Git blame" })
+  keymap.n("<leader>gB" , "<cmd>GBrowse<CR>"     , { desc = "Open in GitHub" })
 
   -- -- convert git to Git in command line mode
   -- vim.fn['utils#Cabbrev']('git', 'Git')

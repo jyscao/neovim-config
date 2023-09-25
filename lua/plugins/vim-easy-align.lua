@@ -5,7 +5,7 @@ local S = {}
 
 function S.config()
   -- set keymaps
-  vim.keymap.set({ 'n', 'x' }, '<leader>xa', "<Plug>(EasyAlign)", { noremap = true, silent = true })
+  require("utils.keymap").nx('<leader>xa', "<Plug>(EasyAlign)")
   -- TODO: use helpers from keymaps.lua
 end
 
