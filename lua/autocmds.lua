@@ -35,3 +35,15 @@ vim.api.nvim_create_autocmd({ 'WinLeave' }, {
   group = focused_window_group,
   pattern = '*',
 })
+
+
+local formatprg_group = vim.api.nvim_create_augroup('SetFormatprg', { clear = true })
+vim.api.nvim_create_autocmd('BufEnter', {
+  callback = function()
+    if vim.bo.filetype == 'markdown' then
+      vim.bo.formatprg = 'par w99 s0'     -- TODO: understand then tweak par options
+    end
+  end,
+  group = formatprg_group,
+  pattern = '*',
+})
