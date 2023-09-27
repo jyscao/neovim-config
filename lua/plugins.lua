@@ -62,12 +62,23 @@ local specifications = {
   -- [[ Terminal Integrations ]]
   _("willothy/flatten.nvim"),	-- Open files & command output in current neovim instance
   -- _("akinsho/toggleterm.nvim"),
+  -- _("mrjones2014/smart-splits.nvim"),  -- Directional navigation & resizing of Neovim + tmux splits
 
-  -- [[ Register Improvements ]]
+  -- [[ Enhancements to Built-ins ]]
+  -- _("kevinhwang91/nvim-bqf"),	-- Better quickfix window in Neovim
+  -- _("folke/trouble.nvim"),		-- A pretty diagnostics, references, telescope results, quickfix and location list 
   _("gennaro-tedesco/nvim-peekup"),	-- Dynamically interact with vim registers
+
+  -- [[ Additional Language Supports ]]
+  -- _("cjrh/vim-conda"),		  -- Change conda environments inside Vim
+  -- _("elixir-tools/elixir-tools.nvim"), -- Neovim plugin for Elixir
 
   -- [[ External Integrations ]]
   _("epwalsh/obsidian.nvim"),	-- Complement to the Obsidian application
+  -- _("renerocksai/telekasten.nvim"),	-- Telescope-based plugin for working w/ a markdown zettelkasten
+  -- _("toppair/peek.nvim"),	-- Markdown preview plugin built using Deno
+  -- _("codota/tabnine-nvim"),	-- NOTE: CPU & memory intensive when running locally
+
   -- [[Meta Plugins for Neovim Config & Plugins ]]
   _("tpope/vim-scriptease"),	-- A Vim plugin for Vim plugins
   -- _("tenxsoydev/nx.nvim"),	-- Utility wrapper for more convenience w/ Lua keymaps, highlights, autocommands & options
@@ -82,9 +93,6 @@ local specifications = {
 
   -- TODO/FIX: CtrlSpace window's display (status line) is busted
   _("vim-ctrlspace/vim-ctrlspace"),	-- Workspace Manager: buffers, tabs, files, workspace, bookmarks
-
-  -- _("kevinhwang91/nvim-bqf"),	-- Better quickfix window in Neovim
-  -- _("folke/trouble.nvim"),
 }
 
 local lazy_opts = {
