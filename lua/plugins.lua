@@ -28,17 +28,17 @@ local specifications = {
   _("AndrewRadev/linediff.vim"),-- Perform diffs on blocks of code
   _("numToStr/Comment.nvim"),	-- Comment plugin that supports treesitter
   _("junegunn/vim-easy-align"),	-- Vim text alignment plugin
-  _("kylechui/nvim-surround"),	-- Add/change/delete surrounding delimiter pairs with ease
-  -- _("echasnovski/mini.surround"),	-- Fast and feature-rich surround actions
   _("utilyre/sentiment.nvim"),	-- Enhanced matchparen.vim
   _("windwp/nvim-autopairs"),	-- Powerful autopair plugin that supports multiple characters
+  _("kylechui/nvim-surround"),	-- Add/change/delete surrounding delimiter pairs with ease
+  -- _("echasnovski/mini.surround"),	-- Fast and feature-rich surround actions
 
   -- [[ Motion Improvements ]]
   _("ggandor/leap.nvim"),	-- Motion plugin building & improving on vim-sneak
   _("ggandor/flit.nvim"),	-- Enhanced f/t motions for Leap
+  _("chrisgrieser/nvim-spider"),-- Move by subwords and skip insignificant punctuation
   -- _("smoka7/hop.nvim"),
   -- _("rlane/pounce.nvim"),
-  _("chrisgrieser/nvim-spider"),	-- Move by subwords and skip insignificant punctuation
 
   -- [[ IDE Core ]]
   _("neovim/nvim-lspconfig"),	-- LSP
