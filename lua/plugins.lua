@@ -65,7 +65,6 @@ local specifications = {
 
   -- [[ Register Improvements ]]
   _("gennaro-tedesco/nvim-peekup"),	-- Dynamically interact with vim registers
-  _("tenxsoydev/karen-yank.nvim"),	-- Improve register handling with delete, cut & yank
 
   -- [[ External Integrations ]]
   _("epwalsh/obsidian.nvim"),	-- Complement to the Obsidian application
