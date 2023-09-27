@@ -68,6 +68,10 @@ local specifications = {
 
   -- [[ External Integrations ]]
   _("epwalsh/obsidian.nvim"),	-- Complement to the Obsidian application
+  -- [[Meta Plugins for Neovim Config & Plugins ]]
+  _("tpope/vim-scriptease"),	-- A Vim plugin for Vim plugins
+  -- _("tenxsoydev/nx.nvim"),	-- Utility wrapper for more convenience w/ Lua keymaps, highlights, autocommands & options
+
 
 
   -- [[ New Plugins -> to be organized]]
@@ -75,7 +79,6 @@ local specifications = {
   _('tpope/vim-sleuth'),	-- Automatically adjusts 'shiftwidth' & 'expandtab' based on heuristics
   _("tpope/vim-rsi"),		-- Readline style insertion
   _("tpope/vim-eunuch"),	-- Helpers for UNIX
-  _("tpope/vim-scriptease"),	-- A Vim plugin for Vim plugins
 
   -- TODO/FIX: CtrlSpace window's display (status line) is busted
   _("vim-ctrlspace/vim-ctrlspace"),	-- Workspace Manager: buffers, tabs, files, workspace, bookmarks
