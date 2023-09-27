@@ -48,9 +48,10 @@ local specifications = {
   _("nvim-treesitter/nvim-treesitter"),		-- Treesitter configurations and abstraction layer
 
   -- [[ Aesthetics ]]
-  _("navarasu/onedark.nvim"),		-- Theme inspired by Atom
-  -- _("folke/tokyonight.nvim"),	-- A clean, dark Neovim theme
-  -- _("catppuccin/nvim"),		-- Soothing pastel theme for (Neo)vim
+  _("zaldih/themery.nvim"),		-- Plugin to switch between installed themes
+  _("navarasu/onedark.nvim"),		-- A theme inspired by Atom
+  _("folke/tokyonight.nvim"),		-- A clean, dark Neovim theme
+  _("nyoom-engineering/oxocarbon.nvim"),-- A theme inspired by IBM Carbon, written in fennel
   _("nvim-lualine/lualine.nvim"),	-- Set lualine as statusline, `:help lualine.txt`
   -- _("nvim-tree/nvim-web-devicons"),
 
