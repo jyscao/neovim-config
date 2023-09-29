@@ -1,17 +1,15 @@
 local S = {}
 
-S.lazy = false
+-- S.lazy = false
 
 S.opts = {
 }
-
--- function S.init()
--- end
 
 function S.config()
   vim.cmd.colorscheme 'tokyonight'
 end
 
-S.priority = 1000
+-- S.priority = 1000
+S.event = "VeryLazy"
 
 return S

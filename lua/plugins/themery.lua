@@ -1,15 +1,23 @@
 local S = {}
 
-
 S.opts = {
-  themes = {"OneDark", "TokyoNight", "Oxocarbon",}, -- Your list of installed colorschemes
-  themeConfigFile = "~/.config/nvim-kickstart/lua/settings/theme.lua", -- Described below
+  themes = {
+    "onedark",
+    "tokyonight-night",
+    "tokyonight-storm",
+    "tokyonight-moon",
+    "oxocarbon",
+    "kanagawa-wave",
+    "kanagawa-dragon",
+    "kanagawa-lotus",
+    -- "catppuccin-latte",
+    -- "catppuccin-frappe",
+    -- "catppuccin-macchiato",
+    -- "catppuccin-mocha",
+  },
   livePreview = true, -- Apply theme while browsing. Default to true.
 }
 
--- function S.config()
--- end
 S.config = true
-
 
 return S
