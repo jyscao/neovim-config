@@ -6,7 +6,6 @@ local S = {}
 function S.config()
   -- set keymaps
   require("utils.keymap").nx('<leader>xa', "<Plug>(EasyAlign)")
-  -- TODO: use helpers from keymaps.lua
 end
 
 -- S.cmd = "EasyAlign"
