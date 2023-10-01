@@ -15,10 +15,11 @@ S.opts = {
     "kanagawa-wave",
     "kanagawa-dragon",
     "kanagawa-lotus",
-    -- "catppuccin-latte",
-    -- "catppuccin-frappe",
-    -- "catppuccin-macchiato",
-    -- "catppuccin-mocha",
+    "nightfox",
+    "duskfox",
+    "nordfox",
+    "terafox",
+    "carbonfox",
   },
   livePreview = true, -- Apply theme while browsing. Default to true.
 }

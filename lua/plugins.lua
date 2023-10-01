@@ -53,12 +53,12 @@ local specifications = {
   _("folke/tokyonight.nvim"),		-- A clean, dark Neovim theme
   _("nyoom-engineering/oxocarbon.nvim"),-- A theme inspired by IBM Carbon, written in fennel
   _("rebelot/kanagawa.nvim"),		-- A theme inspired by the famous painting by Katsushika Hokusai
+  _("EdenEast/nightfox.nvim"),		-- A highly customizable theme; supports LSP & Treesitter
   _("nvim-lualine/lualine.nvim"),	-- Set lualine as statusline, `:help lualine.txt`
   -- _("nvim-tree/nvim-web-devicons"),
 
   -- [[ UI Improvements ]]
   _("lukas-reineke/indent-blankline.nvim"),	-- Add indentation guides even on blank lines
-  -- _("karb94/neoscroll.nvim"),
   _("HiPhish/rainbow-delimiters.nvim"),	-- Rainbow delimiters powered by Tree-sitter
 
   -- [[ Terminal Integrations ]]
