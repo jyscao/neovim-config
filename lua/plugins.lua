@@ -79,6 +79,7 @@ local specifications = {
   _("epwalsh/obsidian.nvim"),	-- Complement to the Obsidian application
   -- _("renerocksai/telekasten.nvim"),	-- Telescope-based plugin for working w/ a markdown zettelkasten
   -- _("toppair/peek.nvim"),	-- Markdown preview plugin built using Deno
+  _("Saimo/peek.nvim"),		-- TODO: use toppair/peek.nvim once this PR (https://github.com/toppair/peek.nvim/pull/50) merged
   -- _("codota/tabnine-nvim"),	-- NOTE: CPU & memory intensive when running locally
 
   -- [[Meta Plugins for Neovim Config & Plugins ]]

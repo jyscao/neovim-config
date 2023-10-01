@@ -2,7 +2,7 @@ local S = {}
 
 function S.init()
   -- set keymaps
-  require("utils.keymap").nx('<leader>t', "<Cmd>Themery<CR>")
+  require("utils.keymap").n('<leader>t', "<Cmd>Themery<CR>")
 end
 
 S.opts = {

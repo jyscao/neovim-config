@@ -29,7 +29,7 @@
   "obsidian.nvim": { "branch": "main", "commit": "52c06a056c62cc38a461cde603842af8a533bf63" },
   "onedark.nvim": { "branch": "master", "commit": "dac8c39812dae025255c9069a260e1f69d967927" },
   "oxocarbon.nvim": { "branch": "main", "commit": "b47c0ecab3a4270815afb3b05e03423b04cca8f2" },
-  "peek.nvim": { "branch": "master", "commit": "67752e7581f88da6899838985a05705b008e4185" },
+  "peek.nvim": { "branch": "master", "commit": "f23200c241b06866b561150fa0389d535a4b903d" },
   "plenary.nvim": { "branch": "master", "commit": "9ce85b0f7dcfe5358c0be937ad23e456907d410b" },
   "rainbow-delimiters.nvim": { "branch": "master", "commit": "ece052dbcb2b3d2980f0f9881e41277929813644" },
   "sentiment.nvim": { "branch": "main", "commit": "54a6db15b630eccfa98c32a76baf90f21c6f1e40" },
