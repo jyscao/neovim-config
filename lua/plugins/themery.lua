@@ -26,4 +26,6 @@ S.opts = {
 
 S.config = true
 
+S.cmd = "Themery"
+
 return S
