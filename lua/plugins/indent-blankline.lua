@@ -1,15 +1,14 @@
 local S = {}
 
--- function S.init()
--- end
-
+-- TODO: see :help ibl.config to see all options & customize
 S.opts = {
-  char = '┊',
-  show_trailing_blankline_indent = false,
+  indent = { char = "│", },
+  -- TODO: integrate w/ rainbow-delimiters.nvim
+  -- see: https://github.com/lukas-reineke/indent-blankline.nvim#rainbow-delimitersnvim-integration
 }
 
--- function S.config()
--- end
+S.config = true
+S.main = "ibl"
 
 S.event = "VeryLazy"
 
