@@ -12,8 +12,16 @@ S.dependencies = {
   'saadparwaiz1/cmp_luasnip',     -- LuaSnip source
   'rafamadriz/friendly-snippets', -- preconfigured snippets for different languages
 
-  -- Adds a number of user-friendly snippets
-  'rafamadriz/friendly-snippets',
+  -- TODO: review, test & selectively incorporate; also see: https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
+  -- 'petertriho/cmp-git',        -- git source
+  -- 'hrsh7th/cmp-cmdline',       -- Neovim cmdline source
+  -- 'hrsh7th/cmp-nvim-lua',      -- Neovim Lua API source
+  -- 'hrsh7th/cmp-latex-symbols', -- LaTeX symbol support source
+  -- 'hrsh7th/cmp-omni',          -- omnifunc source
+  -- 'hrsh7th/cmp-calc',          -- math calculations source
+  -- 'hrsh7th/cmp-emoji',         -- emojis source
+  -- 'hrsh7th/cmp-nvim-lsp-signature-help',  -- source for displaying function signatures
+  -- 'hrsh7th/cmp-nvim-lsp-document-symbol', -- source for textDocument/documentSymbol via nvim-lsp
 }
 
 -- [[ Configure nvim-cmp ]]
@@ -71,6 +79,46 @@ function S.config()
       { name = 'luasnip' },
     },
   }
+
+  -- -- Set configuration for specific filetype.
+  -- cmp.setup.filetype('gitcommit', {
+  --   sources = cmp.config.sources({
+  --     { name = 'git' }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
+  --   }, {
+  --     { name = 'buffer' },
+  --   })
+  -- })
+
+  -- -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+  -- cmp.setup.cmdline({ '/', '?' }, {
+  --   mapping = cmp.mapping.preset.cmdline(),
+  --   sources = {
+  --     { name = 'buffer' }
+  --   }
+  -- })
+  --
+  -- -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+  -- cmp.setup.cmdline(':', {
+  --   mapping = cmp.mapping.preset.cmdline(),
+  --   sources = cmp.config.sources(
+  --     {
+  --       {
+  --         name = 'path',
+  --         option = {
+  --           trailing_slash = true
+  --         },
+  --       }
+  --     },
+  --     {
+  --       {
+  --         name = 'cmdline',
+  --         option = {
+  --           ignore_cmds = { 'Man', '!' }
+  --         }
+  --       },
+  --
+  --   })
+  -- })
 
 end
 
