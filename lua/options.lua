@@ -24,6 +24,7 @@ vim.o.signcolumn     = 'yes'    -- keep signcolumn by default
 vim.o.synmaxcol      = 300      -- disable syntax highlighting after this column
 vim.o.wrap           = false    -- do not wrap lines longer than the window width
 vim.o.breakindent    = true     -- maintain indentation level when wrapping lines
+vim.o.laststatus     = 3        -- use a global statusline at the bottom instead of one for each window
 
 -- [[ Tabs & Indentation ]]     -- NOTE: this is also managed in part by tpope/vim-sleuth
 -- vim.o.tabstop  = 8           -- number of spaces <Tab> counts for; default is 8
