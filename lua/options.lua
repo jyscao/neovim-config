@@ -39,14 +39,15 @@ vim.o.splitbelow    = true      -- new window placed below the current
 vim.o.scrolloff     = 2         -- number of lines to keep on top & bottom when scrolling
 vim.o.sidescrolloff = 10        -- number of columns to keep when side scrolling
 
--- [[ Search ]]
-vim.o.ignorecase = true         -- ignore case in search patterns
-vim.o.smartcase  = true         -- ignore case UNLESS search query contains upper case or using \C
-vim.o.hlsearch   = true         -- highlight all search matches
-vim.o.incsearch  = true         -- show incremental matches while searching
-vim.o.inccommand = 'split'      -- preview effect of search substitutions
+-- [[ Command & Search ]]
+vim.o.ignorecase   = true       -- ignore case in search patterns
+vim.o.smartcase    = true       -- ignore case UNLESS search query contains upper case or using \C
+vim.o.hlsearch     = true       -- highlight all search matches
+vim.o.incsearch    = true       -- show incremental matches while searching
+vim.o.inccommand   = 'split'    -- preview effect of search substitutions
+vim.o.cmdwinheight = 5          -- number of lines to use for command-line window {q:, q/, etc.}
 
--- [[ Motions % Movements ]]
+-- [[ Motions & Movements ]]
 vim.o.tildeop     = true        -- make ~ behave as an operator, i.e. accepts motions & text-objects
 vim.o.startofline = true        -- move the cursor to first non-blank column
 
@@ -55,11 +56,15 @@ vim.o.fileignorecase = true     -- ignore case when using file names & directori
 vim.o.wildignorecase = true     -- ignore case when completing file names & directories
 vim.o.wildignore     = '.git,.hg,.svn,*.pyc,*.o,*.out,*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store,**/node_modules/**'
 
+-- [[ Diff Mode ]]
+-- vim.o.diffexpr = ''          -- expression that's evaluated to obtain diff file
+vim.opt.diffopt:append({'linematch:60', 'algorithm:patience',}) -- additional opts for diff mode
+
 -- [[ Completion ]]
-vim.o.completeopt = 'menuone,noselect'
-vim.o.pumheight   = 15
-vim.o.pumblend    = 15
-vim.o.infercase   = true
+vim.o.completeopt = 'menuone,preview,noinsert,noselect'         -- list of ins-mode completion opts
+vim.o.infercase   = true        -- matches user-inputted case for ins-mode completions
+vim.o.pumheight   = 15          -- max number of items to show in popup-menu
+vim.o.pumblend    = 0           -- transparency % for popup-menu; 0 is disabled
 
 -- [[ History & Persistence ]]
 vim.o.history   = 1000          -- number of commands & searches to remember
