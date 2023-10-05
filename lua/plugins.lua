@@ -22,7 +22,8 @@ local specifications = {
   _("tpope/vim-fugitive"),	-- Git wrapper
   _("tpope/vim-rhubarb"),	-- GitHub extension for vim-fugitive
   _("lewis6991/gitsigns.nvim"),	-- Super fast git decorations in the sign-column
-  -- _("NeogitOrg/neogit"),
+  -- _("NeogitOrg/neogit"),	-- Magit for Neovim
+  -- _("sindrets/diffview.nvim"),	  -- Easily cycle through diffs for all modified files
 
   -- [[ Editing Improvements ]]
   _("AndrewRadev/linediff.vim"),-- Perform diffs on blocks of code
@@ -32,6 +33,7 @@ local specifications = {
   _("windwp/nvim-autopairs"),	-- Powerful autopair plugin that supports multiple characters
   _("kylechui/nvim-surround"),	-- Add/change/delete surrounding delimiter pairs with ease
   -- _("echasnovski/mini.surround"),	-- Fast and feature-rich surround actions
+  _("ntpeters/vim-better-whitespace"),	-- Better whitespace highlighting for Vim
 
   -- [[ Motion Improvements ]]
   _("ggandor/leap.nvim"),	-- Motion plugin building & improving on vim-sneak
@@ -68,7 +70,7 @@ local specifications = {
 
   -- [[ Enhancements to Built-ins ]]
   -- _("kevinhwang91/nvim-bqf"),	-- Better quickfix window in Neovim
-  -- _("folke/trouble.nvim"),		-- A pretty diagnostics, references, telescope results, quickfix and location list 
+  -- _("folke/trouble.nvim"),		-- A pretty diagnostics, references, telescope results, quickfix and location list
   _("gennaro-tedesco/nvim-peekup"),	-- Dynamically interact with vim registers
 
   -- [[ Additional Language Supports ]]
@@ -81,6 +83,7 @@ local specifications = {
   -- _("toppair/peek.nvim"),	-- Markdown preview plugin built using Deno
   _("Saimo/peek.nvim"),		-- TODO: use toppair/peek.nvim once this PR (https://github.com/toppair/peek.nvim/pull/50) merged
   -- _("codota/tabnine-nvim"),	-- NOTE: CPU & memory intensive when running locally
+  -- ("vlime/vlime"),		-- Common Lisp dev environment for Vim; also see: "HiPhish/nvim-cmp-vlime"
 
   -- [[Meta Plugins for Neovim Config & Plugins ]]
   _("tpope/vim-scriptease"),	-- A Vim plugin for Vim plugins
@@ -93,6 +96,7 @@ local specifications = {
   _('tpope/vim-sleuth'),	-- Automatically adjusts 'shiftwidth' & 'expandtab' based on heuristics
   _("tpope/vim-rsi"),		-- Readline style insertion
   _("tpope/vim-eunuch"),	-- Helpers for UNIX
+  -- _("tpope/vim-dadbod"),	-- database client for Vim; also see "kristijanhusak/vim-dadbod-completion"
 
   -- TODO/FIX: CtrlSpace window's display (status line) is busted
   _("vim-ctrlspace/vim-ctrlspace"),	-- Workspace Manager: buffers, tabs, files, workspace, bookmarks
