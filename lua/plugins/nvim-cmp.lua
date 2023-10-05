@@ -5,18 +5,28 @@ local S = {}
 
 S.dependencies = {
   'hrsh7th/cmp-nvim-lsp',         -- Neovim's builtin LSP-client source
-  'hrsh7th/cmp-buffer',           -- buffer words source   -- TODO: config its options
-  'hrsh7th/cmp-path',             -- filesystem paths source
+  'hrsh7th/cmp-buffer',           -- buffer words source      -- TODO: config its options
+  'hrsh7th/cmp-path',             -- filesystem paths source  -- TODO: consider switching to 'FelipeLema/cmp-async-path'
 
   'L3MON4D3/LuaSnip',             -- snippet engine for Neovim written in Lua
   'saadparwaiz1/cmp_luasnip',     -- LuaSnip source
   'rafamadriz/friendly-snippets', -- preconfigured snippets for different languages
 
-  -- TODO: review, test & selectively incorporate; also see: https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
+  -- TODO: add the following & activate on markdown files
+  -- 'uga-rosa/cmp-dictionary',   -- language (e.g. English) dictionary source
+  -- 'f3fora/cmp-spell',          -- `spell` source based on Vim's `spellsuggest`
+  -- 'max397574/cmp-greek',       -- Greek letters source
+
+  -- TODO: review, evaluate & selectively incorporate; also see: https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
   -- 'petertriho/cmp-git',        -- git source
+  -- 'ray-x/cmp-treesitter',      -- Tree-sitter nodes source
+  -- 'andersevenrud/cmp-tmux',    -- tmux source
+  -- 'kdheepak/cmp-latex-symbols',-- LaTeX symbol support source
+  -- 'Jezda1337/nvim-html-css',   -- HTML & CSS source
+  -- 'jcha0713/cmp-tw2css',       -- source to convert Tailwind CSS classes to pure CSS
+  -- 'garyhurtz/cmp_bulma.nvim',  -- Bulma CSS source
   -- 'hrsh7th/cmp-cmdline',       -- Neovim cmdline source
   -- 'hrsh7th/cmp-nvim-lua',      -- Neovim Lua API source
-  -- 'hrsh7th/cmp-latex-symbols', -- LaTeX symbol support source
   -- 'hrsh7th/cmp-omni',          -- omnifunc source
   -- 'hrsh7th/cmp-calc',          -- math calculations source
   -- 'hrsh7th/cmp-emoji',         -- emojis source
@@ -88,7 +98,7 @@ function S.config()
   --     { name = 'buffer' },
   --   })
   -- })
-
+  --
   -- -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
   -- cmp.setup.cmdline({ '/', '?' }, {
   --   mapping = cmp.mapping.preset.cmdline(),
