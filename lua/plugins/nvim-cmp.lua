@@ -23,6 +23,8 @@ function S.config()
   require('luasnip.loaders.from_vscode').lazy_load()
   luasnip.config.setup {}
 
+  local pumheight_half = math.floor(vim.o.pumheight / 2)
+
   cmp.setup {
     snippet = {
       expand = function(args)
@@ -30,10 +32,13 @@ function S.config()
       end,
     },
     mapping = cmp.mapping.preset.insert {
-      ['<C-n>'] = cmp.mapping.select_next_item(),
-      ['<C-p>'] = cmp.mapping.select_prev_item(),
-      ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-      ['<C-f>'] = cmp.mapping.scroll_docs(4),
+      ['<C-c>'] = cmp.mapping.close(),
+      ['<C-j>'] = cmp.mapping.select_next_item(),
+      ['<C-k>'] = cmp.mapping.select_prev_item(),
+      ['<C-d>'] = cmp.mapping.select_next_item({count = pumheight_half}),
+      ['<C-u>'] = cmp.mapping.select_prev_item({count = pumheight_half}),
+      -- ['<C-d>'] = cmp.mapping.scroll_docs(-4),   -- use <C-p>
+      -- ['<C-f>'] = cmp.mapping.scroll_docs(4),    -- use <C-n>
       ['<C-Space>'] = cmp.mapping.complete {},
       ['<CR>'] = cmp.mapping.confirm {
         behavior = cmp.ConfirmBehavior.Replace,
