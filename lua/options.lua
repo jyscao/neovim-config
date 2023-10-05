@@ -55,9 +55,11 @@ vim.o.fileignorecase = true     -- ignore case when using file names & directori
 vim.o.wildignorecase = true     -- ignore case when completing file names & directories
 vim.o.wildignore     = '.git,.hg,.svn,*.pyc,*.o,*.out,*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store,**/node_modules/**'
 
--- [[ Completion Menu ]]
+-- [[ Completion ]]
 vim.o.completeopt = 'menuone,noselect'
 vim.o.pumheight   = 15
+vim.o.pumblend    = 15
+vim.o.infercase   = true
 
 -- [[ History & Persistence ]]
 vim.o.history   = 1000          -- number of commands & searches to remember
