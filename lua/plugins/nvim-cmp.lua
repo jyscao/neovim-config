@@ -4,12 +4,13 @@ local S = {}
 -- end
 
 S.dependencies = {
-  -- Snippet Engine & its associated nvim-cmp source
-  'L3MON4D3/LuaSnip',
-  'saadparwaiz1/cmp_luasnip',
+  'hrsh7th/cmp-nvim-lsp',         -- Neovim's builtin LSP-client source
+  'hrsh7th/cmp-buffer',           -- buffer words source   -- TODO: config its options
+  'hrsh7th/cmp-path',             -- filesystem paths source
 
-  -- Adds LSP completion capabilities
-  'hrsh7th/cmp-nvim-lsp',
+  'L3MON4D3/LuaSnip',             -- snippet engine for Neovim written in Lua
+  'saadparwaiz1/cmp_luasnip',     -- LuaSnip source
+  'rafamadriz/friendly-snippets', -- preconfigured snippets for different languages
 
   -- Adds a number of user-friendly snippets
   'rafamadriz/friendly-snippets',
@@ -65,6 +66,8 @@ function S.config()
     },
     sources = {
       { name = 'nvim_lsp' },
+      { name = 'buffer' },
+      { name = 'path' },
       { name = 'luasnip' },
     },
   }
