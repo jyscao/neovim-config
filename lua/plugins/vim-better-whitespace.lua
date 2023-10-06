@@ -9,10 +9,10 @@ end
 
 function S.config()
   -- set keymaps
-  require("utils.keymap").nx('<leader>xw', "<Cmd>ToggleWhitespace<CR>")
+  require("utils.keymap").n('<leader>xw', "<Cmd>ToggleWhitespace<CR>")
   -- NOTE: this plugin is sometimes buggy, in that it'll highlight whitespaces even
   -- while in insert mode toggling whitespace higlighting off/on seems to fixes it
-  require("utils.keymap").nx('<leader>xW', "<Cmd>StripWhitespace<CR>")
+  require("utils.keymap").n('<leader>xW', "<Cmd>StripWhitespace<CR>")
 end
 
 S.event = "VeryLazy"
