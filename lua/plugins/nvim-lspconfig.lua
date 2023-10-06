@@ -147,7 +147,7 @@ function S.config()
     end
   }
 
-  lexical_setup()
+  lexical_setup()   -- manually setup Lexical LS w/o Mason; TODO: add Lexical to Mason Registry
 end
 
 S.event = { "BufRead", "BufNewFile" }

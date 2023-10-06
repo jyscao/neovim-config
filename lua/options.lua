@@ -25,6 +25,12 @@ vim.o.synmaxcol      = 300      -- disable syntax highlighting after this column
 vim.o.wrap           = false    -- do not wrap lines longer than the window width
 vim.o.breakindent    = true     -- maintain indentation level when wrapping lines
 vim.o.laststatus     = 3        -- use a global statusline at the bottom instead of one for each window
+-- vim.o.shortmess      = ''    -- list of flags to tweak short messages (interactive & status-line); default: 'filnxtToOCF'
+
+-- [[ Editing ]]
+-- vim.opt.formatoptions = ""   -- opts that influence how Vim formats text; TODO: review & set
+-- NOTE: currently see 2 common sets: 'jcroql' (e.g. lua, vim) & 'tcqj' (e.g. python, tmux, elixir); check "folke/neodev.nvim"
+-- `:set formatoptions+=mM` for CJK support, see: https://stackoverflow.com/q/32669814/6064933
 
 -- [[ Tabs & Indentation ]]     -- NOTE: this is also managed in part by tpope/vim-sleuth
 -- vim.o.tabstop  = 8           -- number of spaces <Tab> counts for; default is 8
@@ -49,7 +55,8 @@ vim.o.cmdwinheight = 5          -- number of lines to use for command-line windo
 
 -- [[ Motions & Movements ]]
 vim.o.tildeop     = true        -- make ~ behave as an operator, i.e. accepts motions & text-objects
-vim.o.startofline = true        -- move the cursor to first non-blank column
+vim.o.startofline = true        -- move the cursor to first non-blank column for navigation commands
+vim.o.jumpoptions = "stack"     -- ?; stack preserves relative location of entries when navigating backwards
 
 -- [[ File Names ]]
 vim.o.fileignorecase = true     -- ignore case when using file names & directories
@@ -72,3 +79,5 @@ vim.o.undofile  = true          -- stores undo history offline in file
 -- vim.o.autoread  = true       -- re-read file to get latest state if changed outside of Neovim
 vim.o.autowrite = true          -- ?
 vim.o.swapfile  = false         -- disable swap file generation
+-- vim.o.sessionoptions = ""    -- affects what properties are saved & restored w/ :mksession (used by vim-ctrlspace)
+-- vim.o.viewoptions    = ""    -- affects what properties are saved & restored w/ :mkview
