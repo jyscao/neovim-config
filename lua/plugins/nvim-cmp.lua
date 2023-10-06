@@ -13,7 +13,7 @@ S.dependencies = {
   'rafamadriz/friendly-snippets', -- preconfigured snippets for different languages
 
   -- TODO: add the following & activate on markdown files
-  -- 'uga-rosa/cmp-dictionary',   -- language (e.g. English) dictionary source
+  'uga-rosa/cmp-dictionary',      -- language (e.g. English) dictionary source; -- TODO: only load on supported filetypes
   -- 'f3fora/cmp-spell',          -- `spell` source based on Vim's `spellsuggest`
   -- 'max397574/cmp-greek',       -- Greek letters source
 
@@ -89,6 +89,24 @@ function S.config()
       { name = 'luasnip' },
     },
   }
+
+  cmp.setup.filetype('markdown', {
+    sources = {
+      {
+        name = "dictionary",
+        keyword_length = 2,
+      },
+    }
+  })
+
+  local dict = require("cmp_dictionary")
+  dict.switcher({
+    spelllang = {
+      -- to generate the EN dictionary: $ aspell --master=en dump master | aspell --lang=en expand > ~/Documents/en-dict.txt
+      en = "~/Documents/en-dict.txt",
+      -- es = "~/Documents/es-dict.txt",  -- TODO: get Spanish dictionary to work as source
+    },
+  })
 
   -- -- Set configuration for specific filetype.
   -- cmp.setup.filetype('gitcommit', {
