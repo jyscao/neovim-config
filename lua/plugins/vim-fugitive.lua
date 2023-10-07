@@ -19,6 +19,15 @@ function S.config()
 
   -- -- convert git to Git in command line mode
   -- vim.fn['utils#Cabbrev']('git', 'Git')
+
+  -- set convenient exit keymap
+  vim.api.nvim_create_autocmd('User', {
+    callback = function()
+      keymap.n('q', '<Cmd>quit<CR>', { buffer = true })
+    end,
+    group = require("utils.augroup-defs").easy_quit_key_group,
+    pattern = 'FugitiveIndex',
+  })
 end
 
 -- local wk = require("which-key")

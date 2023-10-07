@@ -19,15 +19,14 @@ function S.config()
   keymap._map('x', '<leader>xd', ":Linediff<CR>")
   keymap.n('<leader>xd', "<Cmd>LinediffReset<CR>")
 
-  -- set a convenient exit keymap
-  local linediff_group = vim.api.nvim_create_augroup('Linediff', { clear = true })
+  -- set convenient exit keymap
   vim.api.nvim_create_autocmd('User', {
     callback = function()
-      keymap.n('q', "<Cmd>LinediffReset<CR>:e<CR>")
+      keymap.n('q', '<Cmd>LinediffReset<CR>:e<CR>', { buffer = true })
       -- NOTE: the extra `:e<CR>` is to workaround Linediff's exiting behavior not triggering the
       -- WinEnter event, and thus does not activate our custom FocusedWindow autocmd group w/o it
     end,
-    group = linediff_group,
+    group = require("utils.augroup-defs").easy_quit_key_group,
     pattern = 'LinediffBufferReady',
   })
 

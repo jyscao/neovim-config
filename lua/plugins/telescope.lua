@@ -29,6 +29,9 @@ function S.config()
           ['<C-u>'] = false,
           ['<C-d>'] = false,
         },
+        n = {
+          ['q'] = require('telescope.actions').close,   -- see augroup `easy_quit_key_group`
+        },
       },
     },
   }
