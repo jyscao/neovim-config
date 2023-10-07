@@ -47,7 +47,7 @@ local specifications = {
   _("hrsh7th/nvim-cmp"),   	-- Autocompletion
   _("folke/which-key.nvim"),	-- displays popup of custom keybindings
   _("nvim-telescope/telescope.nvim"),	-- Ultimate Neovim Fuzzy Funder: find, Filter, preview, pick
-  _("nvim-treesitter/nvim-treesitter"),		-- Treesitter configurations and abstraction layer
+  _("nvim-treesitter/nvim-treesitter"),	-- Treesitter configurations and abstraction layer
 
   -- [[ Aesthetics ]]
   _("zaldih/themery.nvim"),		-- Plugin to switch between installed themes (TODO/NOTE: is very broken, create & use own)
