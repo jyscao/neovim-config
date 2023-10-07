@@ -14,13 +14,13 @@ local function lexical_setup()
   if not configs.lexical then
     configs.lexical = {
       default_config = {
-	filetypes = lexical_config.filetypes,
-	cmd = lexical_config.cmd,
-	root_dir = function(fname)
-	  return lspconfig.util.root_pattern("mix.exs", ".git")(fname) or vim.loop.os_homedir()
-	end,
-	-- optional settings
-	settings = lexical_config.settings,
+        filetypes = lexical_config.filetypes,
+        cmd = lexical_config.cmd,
+        root_dir = function(fname)
+          return lspconfig.util.root_pattern("mix.exs", ".git")(fname) or vim.loop.os_homedir()
+        end,
+        -- optional settings
+        settings = lexical_config.settings,
       },
     }
   end
