@@ -57,7 +57,7 @@ o.cmdwinheight = 5          -- number of lines to use for command-line window {q
 
 -- [[ Motions & Movements ]]
 o.tildeop     = true        -- make ~ behave as an operator, i.e. accepts motions & text-objects
-o.startofline = true        -- move the cursor to first non-blank column for navigation commands
+-- o.startofline = true     -- move the cursor to first non-blank column for navigation commands
 o.jumpoptions = "stack"     -- ?; stack preserves relative location of entries when navigating backwards
 
 -- [[ File Names ]]

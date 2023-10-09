@@ -46,9 +46,9 @@ end
 
 -- shifts the windows in the top level splits
 function M.shift()
-  local lotr = layout_tree.get()
   local active_bufnr = vim.fn.winbufnr(0)
 
+  local lotr = layout_tree.get()
   _shift_top_splits(lotr)
   layout_tree.set(lotr)
   -- require("utils.itertools").print_tbl(lotr)
