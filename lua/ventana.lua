@@ -18,16 +18,16 @@ local function _shift_top_splits(layout)
   end
 end
 
-local function get_winid_by_bufnr(layout, bufnr)
+local function get_win_by_bufnr(layout, bufnr)
   if layout.type == "leaf" then
     if layout.bufnr == bufnr then
-      return layout.winid
+      return layout.winid, layout.winnr
     end
   else
     for _, child in ipairs(layout.children) do
-      local res = get_winid_by_bufnr(child, bufnr)
-      if res then
-        return res
+      local winid, winnr = get_win_by_bufnr(child, bufnr)
+      if winid and winnr then
+        return winid, winnr
       end
     end
   end
@@ -52,9 +52,9 @@ function M.shift()
   _shift_top_splits(layout)
   winlayout.set(layout)
 
-  layout = winlayout.get()
-  local active_winnr = vim.fn.win_id2win(get_winid_by_bufnr(layout, active_bufnr))
-  vim.fn.execute(active_winnr .. 'wincmd w')
+  layout = winlayout.get()  -- get layout again w/ updated winnr
+  local _, winnr = get_win_by_bufnr(layout, active_bufnr)
+  vim.fn.execute(winnr .. 'wincmd w')
 end
 
 return M
