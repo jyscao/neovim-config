@@ -1,11 +1,11 @@
 local M = {}
 
-local winlayout = require("utils.winlayout")
+local layout_tree = require("utils.layout-tree")
 
-local function _swap_split_types(layout)
-  if layout.type ~= "leaf" then
-    layout.type = ({ col = "row", row = "col", })[layout.type]
-    for _, child in ipairs(layout.children) do
+local function _swap_split_types(lotr)
+  if lotr.type ~= "leaf" then
+    lotr.type = ({ col = "row", row = "col", })[lotr.type]
+    for _, child in ipairs(lotr.children) do
       _swap_split_types(child)
     end
   end
@@ -15,27 +15,27 @@ end
 function M.transpose()
   local active_winnr = vim.fn.tabpagewinnr(vim.fn.tabpagenr())
 
-  local layout = winlayout.get()
-  _swap_split_types(layout)
-  winlayout.set(layout)
+  local lotr = layout_tree.get()
+  _swap_split_types(lotr)
+  layout_tree.set(lotr)
 
   vim.fn.execute(active_winnr .. 'wincmd w')
 end
 
-local function _shift_top_splits(layout)
-  if layout.type ~= "leaf" then
-    local last_win = table.remove(layout.children)
-    table.insert(layout.children, 1, last_win)
+local function _shift_top_splits(lotr)
+  if lotr.type ~= "leaf" then
+    local last_win = table.remove(lotr.children)
+    table.insert(lotr.children, 1, last_win)
   end
 end
 
-local function get_win_by_bufnr(layout, bufnr)
-  if layout.type == "leaf" then
-    if layout.bufnr == bufnr then
-      return layout.winid, layout.winnr
+local function get_win_by_bufnr(lotr, bufnr)
+  if lotr.type == "leaf" then
+    if lotr.bufnr == bufnr then
+      return lotr.winid, lotr.winnr
     end
   else
-    for _, child in ipairs(layout.children) do
+    for _, child in ipairs(lotr.children) do
       local winid, winnr = get_win_by_bufnr(child, bufnr)
       if winid and winnr then
         return winid, winnr
@@ -46,14 +46,15 @@ end
 
 -- shifts the windows in the top level splits
 function M.shift()
-  local layout = winlayout.get()
+  local lotr = layout_tree.get()
   local active_bufnr = vim.fn.winbufnr(0)
 
-  _shift_top_splits(layout)
-  winlayout.set(layout)
+  _shift_top_splits(lotr)
+  layout_tree.set(lotr)
+  -- require("utils.itertools").print_tbl(lotr)
 
-  layout = winlayout.get()  -- get layout again w/ updated winnr
-  local _, winnr = get_win_by_bufnr(layout, active_bufnr)
+  lotr = layout_tree.get()  -- get layout-tree again w/ updated winnr
+  local _, winnr = get_win_by_bufnr(lotr, active_bufnr)
   vim.fn.execute(winnr .. 'wincmd w')
 end
 
