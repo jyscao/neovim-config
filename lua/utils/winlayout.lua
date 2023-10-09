@@ -6,10 +6,10 @@ local function add_details(layout)
     local win = layout[2]
 
     local l = {
-      type = layout[1],
-      winid = win,
-      winnr = vim.fn.win_id2win(win),
+      type  = layout[1],
       bufnr = vim.fn.winbufnr(win),
+      winnr = vim.fn.win_id2win(win),
+      winid = win,
     }
     return l
   else

@@ -11,6 +11,17 @@ local function _swap_split_types(layout)
   end
 end
 
+-- flips the windows along the main diagonal, akin to a matrix transpose
+function M.transpose()
+  local active_winnr = vim.fn.tabpagewinnr(vim.fn.tabpagenr())
+
+  local layout = winlayout.get()
+  _swap_split_types(layout)
+  winlayout.set(layout)
+
+  vim.fn.execute(active_winnr .. 'wincmd w')
+end
+
 local function _shift_top_splits(layout)
   if layout.type ~= "leaf" then
     local last_win = table.remove(layout.children)
@@ -31,17 +42,6 @@ local function get_win_by_bufnr(layout, bufnr)
       end
     end
   end
-end
-
--- flips the windows along the main diagonal, akin to a matrix transpose
-function M.transpose()
-  local active_winnr = vim.fn.tabpagewinnr(vim.fn.tabpagenr())
-
-  local layout = winlayout.get()
-  _swap_split_types(layout)
-  winlayout.set(layout)
-
-  vim.fn.execute(active_winnr .. 'wincmd w')
 end
 
 -- shifts the windows in the top level splits
