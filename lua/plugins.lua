@@ -62,6 +62,7 @@ local specifications = {
   -- [[ UI Improvements ]]
   _("lukas-reineke/indent-blankline.nvim"),	-- Add indentation guides even on blank lines
   _("HiPhish/rainbow-delimiters.nvim"),	-- Rainbow delimiters powered by Tree-sitter
+  _("nvim-zh/colorful-winsep.nvim"),	-- Adds colorful window separators
 
   -- [[ Terminal Integrations ]]
   _("willothy/flatten.nvim"),	-- Open files & command output in current neovim instance
