@@ -99,7 +99,6 @@ local specifications = {
   _("tpope/vim-eunuch"),	-- Helpers for UNIX
   -- _("tpope/vim-dadbod"),	-- database client for Vim; also see "kristijanhusak/vim-dadbod-completion"
 
-  -- TODO/FIX: CtrlSpace window's display (status line) is busted
   _("vim-ctrlspace/vim-ctrlspace"),	-- Workspace Manager: buffers, tabs, files, workspace, bookmarks
 }
 

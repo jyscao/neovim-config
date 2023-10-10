@@ -1,5 +1,8 @@
 local S = {}
 
+-- TODO/FIX: CtrlSpace window's display (status line) is busted
+-- TODO/FIX: first window gets screwed up on workspace restore
+
 function S.init()
   -- set CtrlSpace globals
   vim.g.CtrlSpaceDefaultMappingKey = "<C-Space> "
