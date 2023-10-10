@@ -1,6 +1,7 @@
 local M = {}
 
 local layout_tree = require("utils.layout-tree")
+local layout_dims= require("utils.layout-dims")
 
 local function _swap_split_types(lotr)
   if lotr.type ~= "leaf" then
@@ -16,6 +17,7 @@ function M.transpose()
   local active_winnr = vim.fn.tabpagewinnr(vim.fn.tabpagenr())
 
   local lotr = layout_tree.get()
+  -- local rows, cols = layout_dims.get_usable_dims()
   _swap_split_types(lotr)
   layout_tree.set(lotr)
 
