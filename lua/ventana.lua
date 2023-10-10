@@ -22,8 +22,27 @@ function M.transpose()
   vim.fn.execute(active_winnr .. 'wincmd w')
 end
 
+local function _update_winnr_after_shift(lotr, n_wins, last_len)
+  if lotr.type == "leaf" then
+    local updated_winnr = (lotr.winnr + last_len) % n_wins
+    lotr.winnr = updated_winnr == 0 and n_wins or updated_winnr
+  else
+    for _, child in ipairs(lotr.children) do
+      _update_winnr_after_shift(child, n_wins, last_len)
+    end
+  end
+end
+
 local function _shift_top_splits(lotr)
   if lotr.type ~= "leaf" then
+    -- update winnr of each leaf (window); this must be done before the
+    -- actual shifts, otherwise the children indices would be incorrect
+    local last_child = lotr.children[#lotr.children]
+    local last_len = last_child.type == "leaf" and 1 or #last_child.children
+    local n_wins = layout_tree.get_num_normal_wins()
+    _update_winnr_after_shift(lotr, n_wins, last_len)
+
+    -- shift the top level splits in the layout
     local last_win = table.remove(lotr.children)
     table.insert(lotr.children, 1, last_win)
   end
@@ -51,9 +70,7 @@ function M.shift()
   local lotr = layout_tree.get()
   _shift_top_splits(lotr)
   layout_tree.set(lotr)
-  -- require("utils.itertools").print_tbl(lotr)
 
-  lotr = layout_tree.get()  -- get layout-tree again w/ updated winnr
   local _, winnr = get_win_by_bufnr(lotr, active_bufnr)
   vim.fn.execute(winnr .. 'wincmd w')
 end

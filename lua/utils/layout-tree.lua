@@ -14,6 +14,18 @@ local function tab_contains_focusable_floating_wins()
   return #focusable_floats > 0
 end
 
+-- gets the count of focusable non-floating windows
+function M.get_num_normal_wins()
+  local normal_wins = vim.fn.filter(
+    vim.api.nvim_tabpage_list_wins(vim.api.nvim_get_current_tabpage()),
+    function(_, winid)
+      local win_config = vim.api.nvim_win_get_config(winid)
+      return win_config.relative == "" and win_config.focusable
+    end
+  )
+  return #normal_wins
+end
+
 -- add additional info to leafs
 local function gen_layout_tree(winlayout)
   if winlayout[1] == "leaf" then
