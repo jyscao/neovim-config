@@ -7,8 +7,8 @@ local function tab_contains_focusable_floating_wins()
     function(_, winid)
       local win_config = vim.api.nvim_win_get_config(winid)
       return win_config.relative ~= "" and win_config.focusable
-      -- NOTE: we filter on focusable as well, b/c some plugins relies non-focusable
-      -- floating windows to work (e.g. nvim-zh/colorful-winsep.nvim)
+      -- NOTE: we filter on focusable as well, b/c some plugins relies on non-focusable
+      -- floating windows for their functonalities (e.g. nvim-zh/colorful-winsep.nvim)
     end
   )
   return #focusable_floats > 0
