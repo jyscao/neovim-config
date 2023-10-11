@@ -68,13 +68,18 @@ end
 -- shifts the windows in the top level splits
 function M.shift()
   local active_bufnr = vim.fn.winbufnr(0)
-
   local lotr = layout_tree.get()
+
+  -- perform the splits shifting operations & render the new layout
   _shift_top_splits(lotr)
   layout_tree.set(lotr)
 
+  -- getting resize_cmd here maintains the window size for each visible buffer
+  local resize_cmd = layout_dims.get_resize_cmd(lotr)
+
   local _, winnr = get_win_by_bufnr(lotr, active_bufnr)
   vim.fn.execute(winnr .. 'wincmd w')
+  vim.cmd(resize_cmd)
 end
 
 return M

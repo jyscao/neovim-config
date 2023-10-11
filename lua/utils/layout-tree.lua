@@ -29,13 +29,14 @@ end
 -- add additional info to leafs
 local function gen_layout_tree(winlayout)
   if winlayout[1] == "leaf" then
-    local win = winlayout[2]
+    local type, winid = unpack(winlayout)
 
     local l = {
-      type  = winlayout[1],
-      bufnr = vim.fn.winbufnr(win),
-      winnr = vim.fn.win_id2win(win),
-      winid = win,
+      type  = type,
+      bufnr = vim.fn.winbufnr(winid),
+      winnr = vim.fn.win_id2win(winid),
+      winid = winid,
+      win_dims = { vim.fn.winheight(winid), vim.fn.winwidth(winid) }  -- window dimensions: { n_rows, n_cols }
     }
     return l
   else
