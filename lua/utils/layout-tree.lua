@@ -71,6 +71,17 @@ function M.get()
   return gen_layout_tree(winlayout)
 end
 
+function M.is_linear_layout(lotr)
+  if lotr.type == "row" or lotr.type == "col" then
+    for _, child in ipairs(lotr.children) do
+      if child.type ~= "leaf" then
+        return false
+      end
+    end
+  end
+  return true   -- NOTE: if `lotr.type == "leaf"`, `true` will be returned
+end
+
 local function apply_layout_tree(lotr)
   if lotr.type == "leaf" then
     -- open the previous buffer

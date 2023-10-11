@@ -66,16 +66,27 @@ local function get_win_by_bufnr(lotr, bufnr)
 end
 
 -- shifts the windows in the top level splits
-function M.shift()
+function M.shift(maintain_static_layout)
+  local resize_cmd
   local active_bufnr = vim.fn.winbufnr(0)
   local lotr = layout_tree.get()
+
+  -- maintain_static_layout = true
+  local maintain_linear_layout = maintain_static_layout and layout_tree.is_linear_layout(lotr)
+  if maintain_linear_layout then
+    -- getting resize_cmd here maintains the window sizes of the entire layout; this only 
+    -- works for linear layouts, i.e. layouts w/ a single row or col of leaf windows only
+    resize_cmd = layout_dims.get_resize_cmd(lotr)
+  end
 
   -- perform the splits shifting operations & render the new layout
   _shift_top_splits(lotr)
   layout_tree.set(lotr)
 
-  -- getting resize_cmd here maintains the window size for each visible buffer
-  local resize_cmd = layout_dims.get_resize_cmd(lotr)
+  if not maintain_linear_layout then
+    -- getting resize_cmd here maintains the window size for each visible buffer
+    resize_cmd = layout_dims.get_resize_cmd(lotr)
+  end
 
   local _, winnr = get_win_by_bufnr(lotr, active_bufnr)
   vim.fn.execute(winnr .. 'wincmd w')
