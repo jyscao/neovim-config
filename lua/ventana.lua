@@ -17,11 +17,14 @@ function M.transpose()
   local active_winnr = vim.fn.tabpagewinnr(vim.fn.tabpagenr())
 
   local lotr = layout_tree.get()
-  -- local rows, cols = layout_dims.get_usable_dims()
+  local resize_cmd = layout_dims.get_transposed_resize_cmd(lotr)
+
+  -- perform the splits transpose operation & render the new layout
   _swap_split_types(lotr)
   layout_tree.set(lotr)
 
   vim.fn.execute(active_winnr .. 'wincmd w')
+  vim.cmd(resize_cmd)
 end
 
 local function _update_winnr_after_shift(lotr, n_wins, last_len)

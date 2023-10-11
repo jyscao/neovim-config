@@ -18,8 +18,7 @@ function M.get_resize_cmd(lotr)
   return resize_cmd .. resize_cmd   -- do this twice to handle some window layouts properly
 end
 
--- function M.get_screen_size_for_wins()
-local function get_usable_dims()
+local function get_screen_size_for_wins()
   local tabline_height = ({
     [0] = 0,
     [1] = vim.fn.tabpagenr('$') > 1 and 1 or 0,                         -- only has tab line if there are 2+ tabs in the session
@@ -34,6 +33,27 @@ local function get_usable_dims()
   })[vim.o.laststatus]
 
   return (vim.o.lines - tabline_height - statusline_height - vim.o.cmdheight), vim.o.columns
+end
+
+local function round(f)
+  return math.floor(f + 0.5)
+end
+
+local function _set_transposed_win_proportions(lotr, R, C)
+  if lotr.type == "leaf" then
+    local rows, cols = unpack(lotr.win_dims)
+    lotr.win_dims = { round(cols / C * R), round(rows / R * C)}
+  else
+    for _, child in ipairs(lotr.children) do
+      _set_transposed_win_proportions(child, R, C)
+    end
+  end
+end
+
+function M.get_transposed_resize_cmd(lotr)
+  local R, C = get_screen_size_for_wins()
+  _set_transposed_win_proportions(lotr, R, C)
+  return M.get_resize_cmd(lotr)
 end
 
 return M
