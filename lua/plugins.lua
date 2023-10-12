@@ -73,6 +73,7 @@ local specifications = {
   -- _("kevinhwang91/nvim-bqf"),	-- Better quickfix window in Neovim
   -- _("folke/trouble.nvim"),		-- A pretty diagnostics, references, telescope results, quickfix and location list
   _("gennaro-tedesco/nvim-peekup"),	-- Dynamically interact with vim registers
+  _("jyscao/ventana.nvim"),             -- Flip & shift layout of windows in Neovim with ease
 
   -- [[ Additional Language Supports ]]
   -- _("cjrh/vim-conda"),		  -- Change conda environments inside Vim

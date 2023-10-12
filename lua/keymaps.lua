@@ -14,8 +14,6 @@ keymap.n('<C-h>', '<C-w>h')
 keymap.n('<C-j>', '<C-w>j')
 keymap.n('<C-k>', '<C-w>k')
 keymap.n('<C-l>', '<C-w>l')
-keymap.n('<C-w><C-f>', require("ventana").shift)
-keymap.n('<C-w><C-t>', require("ventana").transpose)
 
 -- [[ Remap for dealing with word wrap ]]
 keymap.n('k', "v:count == 0 ? 'gk' : 'k'", { expr = true })
