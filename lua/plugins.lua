@@ -34,6 +34,7 @@ local specifications = {
   _("kylechui/nvim-surround"),	-- Add/change/delete surrounding delimiter pairs with ease
   -- _("echasnovski/mini.surround"),	-- Fast and feature-rich surround actions
   _("ntpeters/vim-better-whitespace"),	-- Better whitespace highlighting for Vim
+  -- _("tenxsoydev/tabs-vs-spaces.nvim"),  -- Hint and fix deviating indentation
 
   -- [[ Motion Improvements ]]
   _("ggandor/leap.nvim"),	-- Motion plugin building & improving on vim-sneak
@@ -73,6 +74,13 @@ local specifications = {
   -- _("kevinhwang91/nvim-bqf"),	-- Better quickfix window in Neovim
   -- _("folke/trouble.nvim"),		-- A pretty diagnostics, references, telescope results, quickfix and location list
   _("gennaro-tedesco/nvim-peekup"),	-- Dynamically interact with vim registers
+  -- _("mrjones2014/smart-splits.nvim"),-- Smart, seamless, directional navigation & resizing of Neovim + tmux
+  -- _("kwkarlwang/bufresize.nvim"),	-- Keep split dimensions in proportion when terminal window is resized
+  -- _("famiu/bufdelete.nvim"),         -- Delete buffers w/o losing window layout
+  -- _("nyngwang/NeoNoName.lua"),	-- Preserves layout on buffer deletion
+  -- _("anuvyklack/windows.nvim"),	-- Automatically expand width of the current window, then restores it after
+  -- _("sindrets/winshift.nvim"),	-- interactively rearrange windows w/ ease
+  -- _("yorickpeterse/nvim-window"),	-- Easily jump b/w windows interactively
   _("jyscao/ventana.nvim"),             -- Flip & shift layout of windows in Neovim with ease
 
   -- [[ Additional Language Supports ]]
@@ -99,6 +107,9 @@ local specifications = {
   _("tpope/vim-rsi"),		-- Readline style insertion
   _("tpope/vim-eunuch"),	-- Helpers for UNIX
   -- _("tpope/vim-dadbod"),	-- database client for Vim; also see "kristijanhusak/vim-dadbod-completion"
+  -- _("kndndrj/nvim-dbee"),	-- Interactive database client for Neovim
+  -- _("kndndrj/nvim-projector"), -- Better project-specific configs for nvim-dap w/ telescope
+  -- _("stevearc/dressing.nvim"), -- Improve the default vim.ui interfaces
 
   _("vim-ctrlspace/vim-ctrlspace"),	-- Workspace Manager: buffers, tabs, files, workspace, bookmarks
 }

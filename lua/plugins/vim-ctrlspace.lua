@@ -2,6 +2,7 @@ local S = {}
 
 -- TODO/FIX: CtrlSpace window's display (status line) is busted
 -- TODO/FIX: first window gets screwed up on workspace restore
+-- TODO/FIX: opening then closing the ctrlspace window destroys window sizes
 
 function S.init()
   -- set CtrlSpace globals

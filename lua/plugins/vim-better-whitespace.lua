@@ -1,6 +1,7 @@
 local S = {}
 
 function S.init()
+  vim.g.better_whitespace_enabled  = 0
   vim.g.better_whitespace_guicolor = 'cyan'
   -- vim.g.better_whitespace_ctermcolor = 'white'
   -- vim.g.current_line_whitespace_disabled_soft = 1
@@ -12,7 +13,7 @@ function S.config()
   -- set keymaps
   keymap.n('<leader>xw', "<Cmd>ToggleWhitespace<CR>")
   -- NOTE: this plugin is sometimes buggy, in that it'll highlight whitespaces even
-  -- while in insert mode toggling whitespace higlighting off/on seems to fixes it
+  -- while in insert mode, toggling whitespace higlighting off/on seems to fixes it
   keymap.n('<leader>xW', "<Cmd>StripWhitespace<CR>")
 end
 
