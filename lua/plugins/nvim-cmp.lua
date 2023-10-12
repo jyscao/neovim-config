@@ -90,7 +90,7 @@ function S.config()
     },
   }
 
-  cmp.setup.filetype('markdown', {
+  cmp.setup.filetype({'markdown', 'text',}, {
     sources = {
       {
         name = "dictionary",
