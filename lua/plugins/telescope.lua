@@ -22,15 +22,21 @@ S.dependencies = {
 -- [[ Configure Telescope ]]
 function S.config()
   -- See `:help telescope` and `:help telescope.setup()`
+  local t_actions = require('telescope.actions')
   require('telescope').setup {
     defaults = {
       mappings = {
         i = {
+          ['<C-j>'] = t_actions.move_selection_next,
+          ['<C-k>'] = t_actions.move_selection_previous,
+          ['<C-h>'] = t_actions.move_to_top,
+          ['<C-m>'] = t_actions.move_to_middle,
+          ['<C-l>'] = t_actions.move_to_bottom,
           ['<C-u>'] = false,
           ['<C-d>'] = false,
         },
         n = {
-          ['q'] = require('telescope.actions').close,   -- see augroup `easy_quit_key_group`
+          ['q'] = t_actions.close,   -- see augroup `easy_quit_key_group`
         },
       },
     },
