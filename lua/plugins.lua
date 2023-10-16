@@ -58,7 +58,7 @@ local specifications = {
   _("rebelot/kanagawa.nvim"),		-- A theme inspired by the famous painting by Katsushika Hokusai
   _("EdenEast/nightfox.nvim"),		-- A highly customizable theme; supports LSP & Treesitter
   _("nvim-lualine/lualine.nvim"),	-- Set lualine as statusline, `:help lualine.txt`
-  -- _("nvim-tree/nvim-web-devicons"),
+  -- _("nvim-tree/nvim-web-devicons"),	-- Adds file type icons to Neovim plugins; loaded as a dependency for lualine.nvim; only activate if custom config needed/desired
 
   -- [[ UI Improvements ]]
   _("lukas-reineke/indent-blankline.nvim"),	-- Add indentation guides even on blank lines
