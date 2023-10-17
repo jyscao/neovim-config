@@ -1,15 +1,14 @@
 local S = {}
 
 local function set_winnr()
-  local hide_winnr = (
-      vim.fn.winnr('$') == 1 or                     -- tab only has 1 window
-      not vim.bo.modifiable  or                     -- not modifiable buffer (e.g. ctrlspace)
-      vim.api.nvim_win_get_config(0).relative ~= "" -- floating window (e.g. telescope)
+  local hide_winnr_attrs = (
+    not vim.bo.modifiable or                      -- not modifiable buffer (e.g. ctrlspace)
+    vim.api.nvim_win_get_config(0).relative ~= "" -- floating window (e.g. telescope, peekup)
   )
-  local force_show_filetypes = {'help', 'man',}     -- TODO: the 'man' extension overrides our winnr addition, so must extend it
+  local force_show_filetypes = {'help', 'man',}   -- TODO: the 'man' extension overrides our winnr addition, so must extend it
   local show_winnr = (
-    not hide_winnr or
-    require("utils.itertools").list_contains(force_show_filetypes, vim.bo.filetype)
+    vim.fn.winnr('$') ~= 1 and                    -- prerequisite: tab must have more than 1 window
+    (not hide_winnr_attrs or require("utils.itertools").list_contains(force_show_filetypes, vim.bo.filetype))
   )
   return show_winnr and vim.fn.winnr() or ""
 end
