@@ -13,7 +13,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.api.nvim_create_autocmd({'BufWinEnter', 'WinResized'}, {
   callback = function()
     if vim.bo.filetype == 'help' then
-      local quit_cmd = vim.fn.winnr('$') == 1 and '<C-^>' or '<Cmd>quit<CR>'  -- don't use `:quit` when the help buffer is the only window
+      if not vim.w.spawning_bufnr then
+        vim.api.nvim_win_set_var(0, 'spawning_bufnr', vim.fn.winbufnr(vim.fn.tabpagewinnr(vim.fn.tabpagenr(), '#')))
+      end
+      local single_win_quit_cmd = '<Cmd>buffer ' .. vim.w.spawning_bufnr .. '<CR>'      -- don't use `:quit` when the help buffer is the only window
+      local quit_cmd = vim.fn.winnr('$') == 1 and single_win_quit_cmd or '<Cmd>quit<CR>'
       require('utils.keymap').n('q', quit_cmd, { buffer = true })
     end
   end,
