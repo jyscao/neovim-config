@@ -16,7 +16,7 @@ function S.config()
   local keymap = require("utils.keymap")
 
   -- set keymaps
-  keymap._map('x', '<leader>xd', ":Linediff<CR>")
+  keymap.x('<leader>xd', ":Linediff<CR>")
   keymap.n('<leader>xd', "<Cmd>LinediffReset<CR>")
 
   -- set convenient exit keymap

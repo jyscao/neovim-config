@@ -25,6 +25,10 @@ keymap.nx(';', ':', { silent = false, })	-- enter Cmdline-mode with ;
 keymap.nx('QQ', '<Cmd>quitall!<CR>')		-- force exit Neovim
 -- map({ 'n', 'x', 'o' }, ':', 'gE')       -- NOTE: mapped in config for nvim-spider
 
+-- [[ Diff copying in VISUAL ]]			-- useful when working w/ fugitive diffs
+keymap.x('<leader>dg', ":diffget<CR>")
+keymap.x('<leader>dp', ":diffput<CR>")
+
 -- TODO: add :q command to quit Telescope w/o requiring :q!
 --
 -- nmap("<C-s>", "<Cmd>update<CR>", { desc = "Save buffer if modified" })

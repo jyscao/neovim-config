@@ -12,6 +12,10 @@ function M.n(lhs, rhs, opts)
   M._map('n', lhs, rhs, opts)
 end
 
+function M.x(lhs, rhs, opts)
+  M._map('x', lhs, rhs, opts)
+end
+
 function M.nx(lhs, rhs, opts)
   M._map({ 'n', 'x' }, lhs, rhs, opts)
 end
