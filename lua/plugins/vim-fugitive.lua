@@ -26,7 +26,7 @@ function S.config()
       keymap.n('q', '<Cmd>quit<CR>', { buffer = true })
     end,
     group = require("utils.augroup-defs").easy_quit_key_group,
-    pattern = 'FugitiveIndex',
+    pattern = {'FugitiveIndex', 'FugitivePager'},
   })
 end
 

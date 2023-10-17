@@ -22,6 +22,7 @@ keymap.n('j', "v:count == 0 ? 'gj' : 'j'", { expr = true })
 -- [[ Conveniences ]]
 keymap.n('?', ':noh<CR>')			-- turn off search highlighting (don't need backwards search anyway since forwards search wraps-around)
 keymap.nx(';', ':', { silent = false, })	-- enter Cmdline-mode with ;
+keymap.nx('QQ', '<Cmd>quitall!<CR>')		-- force exit Neovim
 -- map({ 'n', 'x', 'o' }, ':', 'gE')       -- NOTE: mapped in config for nvim-spider
 
 -- TODO: add :q command to quit Telescope w/o requiring :q!

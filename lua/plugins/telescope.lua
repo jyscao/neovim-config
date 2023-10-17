@@ -36,7 +36,7 @@ function S.config()
           ['<C-d>'] = false,
         },
         n = {
-          ['q'] = t_actions.close,   -- see augroup `easy_quit_key_group`
+          ['q'] = t_actions.close,   -- see augroup `easy_quit_key_group`; TODO/FIXME: `q` key stops working if leave then return to TelescopePrompt
         },
       },
     },

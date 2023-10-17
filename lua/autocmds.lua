@@ -9,6 +9,17 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
+-- set convenient exit keymap for built-in `help` filetype
+vim.api.nvim_create_autocmd({'BufWinEnter', 'WinResized'}, {
+  callback = function()
+    if vim.bo.filetype == 'help' then
+      local quit_cmd = vim.fn.winnr('$') == 1 and '<C-^>' or '<Cmd>quit<CR>'  -- don't use `:quit` when the help buffer is the only window
+      require('utils.keymap').n('q', quit_cmd, { buffer = true })
+    end
+  end,
+  group = require("utils.augroup-defs").easy_quit_key_group,
+  pattern = '*',
+})
 
 local focused_win_excluded_ft = {'help', 'lspinfo', 'man',}
 local focused_window_group = vim.api.nvim_create_augroup('FocusedWindow', { clear = true })
