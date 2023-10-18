@@ -56,11 +56,24 @@ S.opts = {
   -- component_separators = '|',    -- default separators:  
   -- section_separators = '',       -- default separators:  
   sections = {
-    lualine_c = {get_winnr, 'filename', },
+    lualine_c = {
+      get_winnr,
+      'windows',
+    },
     lualine_x = {
-      {get_lsp, icon = ' LSP:', color = { fg = '#ffffff', gui = 'bold' }},   -- TODO: set fg-color based on colorscheme dark vs light
+      {
+        get_lsp,
+        icon = ' LSP:',
+        -- color = { fg = '#ffffff', gui = 'bold', },    -- TODO: set fg-color based on colorscheme dark vs light
+      },
       'filetype',
+      'encoding',
       'fileformat',
+    },
+    lualine_y = { 'progress', '%l:%c', '%L', },
+    lualine_z = {
+      function () return vim.o.lines .. '×' .. vim.o.columns end,
+      vim.fn.environ().TERM_PROGRAM == 'tmux' and '' or 'datetime', -- TODO: customize display style of 'datetime' component
     },
   },
   extensions = {
