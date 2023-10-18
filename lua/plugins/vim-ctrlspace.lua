@@ -1,8 +1,8 @@
 local S = {}
 
--- TODO/FIX: CtrlSpace window's display (status line) is busted
 -- TODO/FIX: first window gets screwed up on workspace restore
 -- TODO/FIX: opening then closing the ctrlspace window destroys window sizes
+-- TODO: make CtrlSpace colors match rest of colorscheme; change colors by mode & integrate w/ lualine.nvim
 
 function S.init()
   -- set CtrlSpace globals
