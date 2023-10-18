@@ -32,6 +32,7 @@ S.opts = {
     -- 'fzf',
     'lazy',
     'man',
+    'mason',
     -- 'mundo',
     'quickfix',
     -- 'trouble',
