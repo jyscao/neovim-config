@@ -1,6 +1,6 @@
 local S = {}
 
-local function set_winnr()
+local function get_winnr()
   local hide_winnr_attrs = (
     not vim.bo.modifiable or                      -- not modifiable buffer (e.g. ctrlspace)
     vim.api.nvim_win_get_config(0).relative ~= "" -- floating window (e.g. telescope, peekup)
@@ -11,6 +11,26 @@ local function set_winnr()
     (not hide_winnr_attrs or require("utils.itertools").list_contains(force_show_filetypes, vim.bo.filetype))
   )
   return show_winnr and vim.fn.winnr() or ""
+end
+
+local function get_lsp()
+  local clients = vim.lsp.get_active_clients()
+
+  if next(clients) == nil then
+    return "None Found"
+  end
+
+  local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+  local lsp_info = {}
+  for _, client in ipairs(clients) do
+    local filetypes = client.config.filetypes
+    if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+      table.insert(lsp_info, client.name)
+    end
+  end
+  table.sort(lsp_info)
+
+  return #lsp_info > 0 and table.concat(lsp_info, ', ') or "N/A"
 end
 
 S.dependencies = {
@@ -25,7 +45,12 @@ S.opts = {
   -- component_separators = '|',    -- default separators:  
   -- section_separators = '',       -- default separators:  
   sections = {
-    lualine_c = {set_winnr, 'filename', },
+    lualine_c = {get_winnr, 'filename', },
+    lualine_x = {
+      {get_lsp, icon = ' LSP:', color = { fg = '#ffffff', gui = 'bold' }},   -- TODO: set fg-color based on colorscheme dark vs light
+      'filetype',
+      'fileformat',
+    },
   },
   extensions = {
     'fugitive',
