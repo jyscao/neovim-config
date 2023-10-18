@@ -70,10 +70,14 @@ S.opts = {
       'encoding',
       'fileformat',
     },
-    lualine_y = { 'progress', '%l:%c', '%L', },
+    lualine_y = {
+      'progress',
+      '%l:%c',
+      function () return vim.fn.line('$') > vim.fn.winheight(0) and vim.fn.line('$') or '' end,   -- only display total line count if it exceeds the window height
+    },
     lualine_z = {
-      function () return vim.o.lines .. '×' .. vim.o.columns end,
-      vim.fn.environ().TERM_PROGRAM == 'tmux' and '' or 'datetime', -- TODO: customize display style of 'datetime' component
+      function () return vim.fn.winheight(0) .. '×' .. vim.fn.winwidth(0) end,                    -- display the window dimensions
+      vim.fn.environ().TERM_PROGRAM == 'tmux' and '' or 'datetime',                               -- TODO: customize display style of 'datetime' component
     },
   },
   extensions = {
