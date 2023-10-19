@@ -1,23 +1,41 @@
 local S = {}
 
+local function get_tabpagenr()
+  local tabpagenr_roman = ({ 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'})[vim.fn.tabpagenr()]   -- TODO: generalize to >10 tabs
+  return vim.fn.tabpagenr('$') == 1 and '' or tabpagenr_roman
+end
+
 local function get_winnr()
   local hide_winnr_attrs = (
     not vim.bo.modifiable or                      -- not modifiable buffer (e.g. ctrlspace)
-    vim.api.nvim_win_get_config(0).relative ~= "" -- floating window (e.g. telescope, peekup)
+    vim.api.nvim_win_get_config(0).relative ~= '' -- floating window (e.g. telescope, peekup)
   )
   local force_show_filetypes = {'help', 'man',}   -- TODO: the 'man' extension overrides our winnr addition, so must extend it
   local show_winnr = (
     vim.fn.winnr('$') ~= 1 and                    -- prerequisite: tab must have more than 1 window
     (not hide_winnr_attrs or require("utils.itertools").list_contains(force_show_filetypes, vim.bo.filetype))
   )
-  return show_winnr and vim.fn.winnr() or ""
+  return show_winnr and vim.fn.winnr() or ''
+end
+
+local function get_tab_win_info()
+  local t, w = get_tabpagenr(), get_winnr()
+  if t ~= '' and w ~= '' then
+    return  t .. ':' .. w
+  elseif t == '' and w ~= '' then
+    return w
+  elseif t~= '' and w == '' then
+    return t
+  else
+    return ''
+  end
 end
 
 local function get_lsp()
   local clients = vim.lsp.get_active_clients()
 
   if next(clients) == nil then
-    return "None Found"
+    return 'None Found'
   end
 
   local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
@@ -30,7 +48,7 @@ local function get_lsp()
   end
   table.sort(lsp_info)
 
-  return #lsp_info > 0 and table.concat(lsp_info, ', ') or "N/A"
+  return #lsp_info > 0 and table.concat(lsp_info, ', ') or 'N/A'
 end
 
 local ctrlspace_info = {
@@ -57,8 +75,8 @@ S.opts = {
   -- section_separators = '',       -- default separators:  
   sections = {
     lualine_c = {
-      get_winnr,
-      'windows',
+      get_tab_win_info,
+      'windows',  -- TOOD: ensure tab-win-info is always visible even when there are many window segments
     },
     lualine_x = {
       {
