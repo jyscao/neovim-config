@@ -2,7 +2,7 @@ local S = {}
 
 -- TODO/FIX: first window gets screwed up on workspace restore
 -- TODO/FIX: opening then closing the ctrlspace window destroys window sizes
--- TODO: make CtrlSpace colors match rest of colorscheme; change colors by mode & integrate w/ lualine.nvim
+-- TODO: make CtrlSpace colors match rest of colorscheme; change colors by mode & integrate w/ lualine.nvim; see: https://github.com/vim-ctrlspace/vim-ctrlspace#colors
 
 function S.init()
   -- set CtrlSpace globals
