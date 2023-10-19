@@ -74,9 +74,11 @@ S.opts = {
   -- component_separators = '|',    -- default separators:  
   -- section_separators = '',       -- default separators:  
   sections = {
+    lualine_b = { 'branch', 'diff', 'diagnostics', },
     lualine_c = {
       get_tab_win_info,
-      'windows',  -- TOOD: ensure tab-win-info is always visible even when there are many window segments
+      'windows',      -- TOOD: ensure tab-win-info is always visible even when there are many window segments
+      -- 'filename',  -- TODO: consider adding filename component just for the modification/readonly status
     },
     lualine_x = {
       {
@@ -91,11 +93,18 @@ S.opts = {
     lualine_y = {
       'progress',
       '%l:%c',
-      function () return vim.fn.line('$') > vim.fn.winheight(0) and vim.fn.line('$') or '' end,   -- only display total line count if it exceeds the window height
+      {
+        '%L',
+        cond = function () return vim.fn.line('$') > vim.fn.winheight(0) end    -- only display total line count if it exceeds the window height
+      }
     },
     lualine_z = {
-      function () return vim.fn.winheight(0) .. '×' .. vim.fn.winwidth(0) end,                    -- display the window dimensions
-      vim.fn.environ().TERM_PROGRAM == 'tmux' and '' or 'datetime',                               -- TODO: customize display style of 'datetime' component
+      function () return vim.fn.winheight(0) .. '×' .. vim.fn.winwidth(0) end,  -- display the window dimensions
+      {
+        'datetime',
+        -- style = '', -- TODO: customize display style of 'datetime' component
+        cond = function () return vim.fn.environ().TERM_PROGRAM ~= 'tmux' end,  -- only display datetime when not running inside tmux, which already has a time widget
+      },
     },
   },
   extensions = {
