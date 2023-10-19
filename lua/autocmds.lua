@@ -1,3 +1,5 @@
+local list_contains = require('utils.itertools').list_contains
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
@@ -8,6 +10,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
+
 
 -- set convenient exit keymap for built-in `help` filetype
 vim.api.nvim_create_autocmd({'BufWinEnter', 'WinResized'}, {
@@ -25,11 +28,11 @@ vim.api.nvim_create_autocmd({'BufWinEnter', 'WinResized'}, {
   pattern = '*',
 })
 
-local focused_win_excluded_ft = {'help', 'lspinfo', 'man',}
+
 local focused_window_group = vim.api.nvim_create_augroup('FocusedWindow', { clear = true })
 vim.api.nvim_create_autocmd({ 'VimEnter', 'WinEnter', 'BufWinEnter'}, {
   callback = function()
-    if not require("utils.itertools").list_contains(focused_win_excluded_ft, vim.bo.filetype) then
+    if not list_contains({'help', 'lspinfo', 'man',}, vim.bo.filetype) then
       vim.wo.colorcolumn    = '100'
       vim.wo.relativenumber = true
       -- if relativenumber is applied w/o filtering out help files, then
@@ -55,7 +58,7 @@ vim.api.nvim_create_autocmd({ 'WinLeave' }, {
 local formatprg_group = vim.api.nvim_create_augroup('SetFormatprg', { clear = true })
 vim.api.nvim_create_autocmd('BufEnter', {
   callback = function()
-    if vim.bo.filetype == 'markdown' then
+    if list_contains({'markdown', 'text'}, vim.bo.filetype) then
       vim.bo.formatprg = 'par w99 s0'     -- TODO: understand then tweak par options
     end
   end,
