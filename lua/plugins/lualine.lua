@@ -51,17 +51,6 @@ local function get_lsp()
   return #lsp_info > 0 and table.concat(lsp_info, ', ') or 'N/A'
 end
 
-local ctrlspace_info = {
-  sections = {
-    lualine_b = {
-      function() return vim.fn['ctrlspace#context#Configuration']().Symbols.CS end,
-    },
-    lualine_c = {'ctrlspace#api#StatuslineModeSegment',},
-    lualine_y = {'ctrlspace#api#StatuslineTabSegment'},
-  },
-  filetypes = {'ctrlspace'},
-}
-
 S.dependencies = {
   { 'nvim-tree/nvim-web-devicons', opt = true },
 }
@@ -108,7 +97,7 @@ S.opts = {
     },
   },
   extensions = {
-    ctrlspace_info,
+    'ctrlspace',
     'fugitive',
     -- 'fzf',
     'lazy',
