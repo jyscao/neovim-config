@@ -66,7 +66,10 @@ S.opts = {
     lualine_b = { 'branch', 'diff', 'diagnostics', },
     lualine_c = {
       get_tab_win_info,
-      'windows',      -- TOOD: ensure tab-win-info is always visible even when there are many window segments
+      {
+        'windows',
+        max_length = vim.o.columns / 2,   -- this ensures tab-win-info above stays visible even w/ many window segments
+      }
       -- 'filename',  -- TODO: consider adding filename component just for the modification/readonly status
     },
     lualine_x = {
