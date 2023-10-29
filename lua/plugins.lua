@@ -86,6 +86,7 @@ local specifications = {
   -- [[ Additional Language Supports ]]
   -- _("cjrh/vim-conda"),		  -- Change conda environments inside Vim
   -- _("elixir-tools/elixir-tools.nvim"), -- Neovim plugin for Elixir
+  _("emmanueltouzery/elixir-extras.nvim"),  -- View Elixir docs in Telescope & mark mult-clause functions
 
   -- [[ External Integrations ]]
   _("epwalsh/obsidian.nvim"),	-- Complement to the Obsidian application
