@@ -20,7 +20,8 @@ keymap.n('k', "v:count == 0 ? 'gk' : 'k'", { expr = true })
 keymap.n('j', "v:count == 0 ? 'gj' : 'j'", { expr = true })
 
 -- [[ Conveniences ]]
-keymap.n('?', ':noh<CR>')			-- turn off search highlighting (don't need backwards search anyway since forwards search wraps-around)
+keymap.n(',', ':noh<CR>')			-- turn off search highlighting
+-- keymap.n('?', ':noh<CR>')			-- see https://stackoverflow.com/a/1220118/5437918 for uses of backwards search; e.g. `y?bar` copies from the current line to previous line containing "bar"
 keymap.nx(';', ':', { silent = false, })	-- enter Cmdline-mode with ;
 keymap.nx('QQ', '<Cmd>quitall!<CR>')		-- force exit Neovim
 -- map({ 'n', 'x', 'o' }, ':', 'gE')       -- NOTE: mapped in config for nvim-spider

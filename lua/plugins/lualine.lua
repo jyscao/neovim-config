@@ -68,7 +68,7 @@ S.opts = {
       get_tab_win_info,
       {
         'windows',
-        max_length = function() return vim.o.columns / 2 end,   -- this ensures tab-win-info section stays visible even w/ many window segments; the function supports windows resizing
+        max_length = function() return vim.o.columns / 3 end,   -- this ensures tab-win-info section stays visible even w/ many window segments; the function supports windows resizing
       }
       -- 'filename',  -- TODO: consider adding filename component just for the modification/readonly status
     },

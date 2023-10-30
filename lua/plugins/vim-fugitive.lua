@@ -16,6 +16,7 @@ function S.config()
   keymap.n("<leader>gp" , "<cmd>Git push<CR>"           , { desc = "Git push" })
   keymap.n("<leader>gb" , "<cmd>Git blame<CR>"          , { desc = "Git blame" })
   keymap.n("<leader>gB" , "<cmd>GBrowse<CR>"            , { desc = "Open in GitHub" })
+  keymap.n("<leader>gS" , "<cmd>Git stash -k<CR>"       , { desc = "Git stash --keep-index" })
 
   -- -- convert git to Git in command line mode
   -- vim.fn['utils#Cabbrev']('git', 'Git')
