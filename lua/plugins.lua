@@ -67,10 +67,11 @@ local specifications = {
 
   -- [[ Terminal Integrations ]]
   _("willothy/flatten.nvim"),	-- Open files & command output in current neovim instance
-  -- _("akinsho/toggleterm.nvim"),
+  -- _("akinsho/toggleterm.nvim"),        -- Persist & toggle multiple terminals during an editing session
   -- _("mrjones2014/smart-splits.nvim"),  -- Directional navigation & resizing of Neovim + tmux splits
 
   -- [[ Enhancements to Built-ins ]]
+  _("stevearc/oil.nvim"),               -- Neovim file explorer: edit your filesystem like a buffer
   -- _("kevinhwang91/nvim-bqf"),	-- Better quickfix window in Neovim
   -- _("folke/trouble.nvim"),		-- A pretty diagnostics, references, telescope results, quickfix and location list
   _("gennaro-tedesco/nvim-peekup"),	-- Dynamically interact with vim registers
@@ -81,7 +82,7 @@ local specifications = {
   -- _("anuvyklack/windows.nvim"),	-- Automatically expand width of the current window, then restores it after
   -- _("sindrets/winshift.nvim"),	-- interactively rearrange windows w/ ease
   -- _("yorickpeterse/nvim-window"),	-- Easily jump b/w windows interactively
-  _("jyscao/ventana.nvim"),             -- Flip & shift layout of windows in Neovim with ease
+  _("jyscao/ventana.nvim"),             -- Convenient flips & shifts for your windows layout
 
   -- [[ Additional Language Supports ]]
   -- _("cjrh/vim-conda"),		  -- Change conda environments inside Vim
@@ -94,7 +95,8 @@ local specifications = {
   -- _("toppair/peek.nvim"),	-- Markdown preview plugin built using Deno
   _("Saimo/peek.nvim"),		-- TODO: use toppair/peek.nvim once this PR (https://github.com/toppair/peek.nvim/pull/50) merged
   -- _("codota/tabnine-nvim"),	-- NOTE: CPU & memory intensive when running locally
-  -- ("vlime/vlime"),		-- Common Lisp dev environment for Vim; also see: "HiPhish/nvim-cmp-vlime"
+  -- _("vlime/vlime"),		-- Common Lisp dev environment for Vim; also see: "HiPhish/nvim-cmp-vlime"
+  _("wojciech-kulik/xcodebuild.nvim"),   -- Neovim plugin to Build, Debug, and Test applications created for Apple devices
 
   -- [[Meta Plugins for Neovim Config & Plugins ]]
   _("tpope/vim-scriptease"),	-- A Vim plugin for Vim plugins
