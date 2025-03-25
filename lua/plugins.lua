@@ -74,11 +74,14 @@ local specifications = {
   -- _("mrjones2014/smart-splits.nvim"),         -- Directional navigation & resizing of Neovim + tmux splits
 
   -- [[ Enhancements to Built-ins ]]
+  _("jyscao/ventana.nvim"),                   -- Convenient flips & shifts for your windows layout
+  _('tpope/vim-sleuth'),                      -- Automatically adjusts 'shiftwidth' & 'expandtab' based on heuristics
+  _("tpope/vim-rsi"),                         -- Readline style insertion
+  _("tpope/vim-eunuch"),                      -- Helpers for UNIX
   _("stevearc/oil.nvim"),                     -- Neovim file explorer: edit your filesystem like a buffer
+  _("gennaro-tedesco/nvim-peekup"),           -- Dynamically interact with vim registers
   -- _("kevinhwang91/nvim-bqf"),                 -- Better quickfix window in Neovim
   -- _("folke/trouble.nvim"),                    -- A pretty diagnostics, references, telescope results, quickfix and location list
-  _("gennaro-tedesco/nvim-peekup"),           -- Dynamically interact with vim registers
-  _("jyscao/ventana.nvim"),                   -- Convenient flips & shifts for your windows layout
   -- _("kwkarlwang/bufresize.nvim"),             -- Keep split dimensions in proportion when terminal window is resized
   -- _("famiu/bufdelete.nvim"),                  -- Delete buffers w/o losing window layout (archived on Feb 17, 2025)
   -- _("nyngwang/NeoNoName.lua"),                -- Preserves layout on buffer deletion
@@ -109,15 +112,10 @@ local specifications = {
 
   -- [[ New Plugins -> to be organized]]
   --
-  _('tpope/vim-sleuth'),	-- Automatically adjusts 'shiftwidth' & 'expandtab' based on heuristics
-  _("tpope/vim-rsi"),		-- Readline style insertion
-  _("tpope/vim-eunuch"),	-- Helpers for UNIX
-  -- _("tpope/vim-dadbod"),	-- database client for Vim; also see "kristijanhusak/vim-dadbod-completion"
-  -- _("kndndrj/nvim-dbee"),	-- Interactive database client for Neovim
-  -- _("kndndrj/nvim-projector"), -- Better project-specific configs for nvim-dap w/ telescope
-  -- _("stevearc/dressing.nvim"), -- Improve the default vim.ui interfaces
-
-  _("vim-ctrlspace/vim-ctrlspace"),	-- Workspace Manager: buffers, tabs, files, workspace, bookmarks
+  -- _("tpope/vim-projectionist"),   -- Provides granular project configuration using "projections"
+  -- _("kndndrj/nvim-projector"),    -- Better project-specific configs for nvim-dap w/ telescope
+  -- _("folke/snacks.nvim"),         -- A collection of QoL plugins for Neovim
+  -- _("stevearc/dressing.nvim"),    -- Improve the default vim.ui interfaces (archived on Feb 12, 2025)
 }
 
 local lazy_opts = {
