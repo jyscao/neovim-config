@@ -5,9 +5,10 @@
 local keymap = require("utils.keymap")
 
 -- [[ Back to NORMAL ]]
-keymap._map({ 'i', 'o' }, 'jk', '<Esc>'      )
-keymap._map( 'c',         'jk', '<C-c>'      )
-keymap._map( 't',         'jk', '<C-\\><C-n>')
+keymap._map('o', 'jk', '<Esc>'      )    -- operator-pending mode
+keymap._map('c', 'jk', '<C-c>'      )    -- command-line mode
+keymap._map('t', 'jk', '<C-\\><C-n>')    -- terminal mode
+-- NOTE: exiting insert mode is taken care of by the plugin "nvim-zh/better-escape.vim"
 
 -- [[ Better windows ]]
 keymap.n('<C-h>', '<C-w>h')

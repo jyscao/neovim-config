@@ -28,6 +28,7 @@ local specifications = {
   -- [[ Editing Improvements ]]
   _("AndrewRadev/linediff.vim"),              -- Perform diffs on blocks of code
   _("junegunn/vim-easy-align"),               -- Simple, easy-to-use Vim alignment plugin
+  _("nvim-zh/better-escape.vim"),             -- Escaping insert mode without lagging
   _("numToStr/Comment.nvim"),                 -- Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, and more
   _("utilyre/sentiment.nvim"),                -- Enhanced matchparen.vim plugin for Neovim (archived on Jan 9, 2025)
   _("windwp/nvim-autopairs"),                 -- Powerful autopair plugin that supports multiple characters
