@@ -22,7 +22,10 @@ function S.config()
       enable = true,
       additional_vim_regex_highlighting = { "markdown" },
     },
-    indent = { enable = true },
+    indent = {
+      enable = true,
+      disable = {'dart'},   -- NOTE: enabling indentation significantly slows down editing in Dart files; see - https://github.com/nvim-flutter/flutter-tools.nvim/issues/267#issuecomment-1616728174
+    },
     incremental_selection = {
       enable = true,
       keymaps = {

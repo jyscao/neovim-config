@@ -11,7 +11,7 @@ S.init = function()
 end
 
 S.config = true
-S.build = "deno task --quiet build:fast"
+S.build = "deno task --quiet build:fast"    -- NOTE: obviously this requires deno in $PATH (using asdf)
 S.ft = "markdown"
 
 return S
