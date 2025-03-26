@@ -37,15 +37,13 @@ end
 
 S.dependencies = {
   -- Automatically install LSPs to stdpath for neovim
-  { 'williamboman/mason.nvim', config = true },
-  'williamboman/mason-lspconfig.nvim',
+  { 'williamboman/mason.nvim', config = true },       -- Package manager for Neovim to easily install and manage LSP servers, DAP servers, linters & formatters
+  'williamboman/mason-lspconfig.nvim',                -- Extension to mason.nvim that makes it easier to use lspconfig with mason.nvim
 
-  -- Useful status updates for LSP
+  { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} }, -- Useful status updates for LSP
   -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-  { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
 
-  -- Additional lua configuration, makes nvim stuff amazing!
-  'folke/neodev.nvim',
+  'folke/neodev.nvim',                                -- Additional lua configuration, makes nvim stuff amazing!
 }
 
 -- function S.init()
