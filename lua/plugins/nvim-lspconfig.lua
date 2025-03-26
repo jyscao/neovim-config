@@ -1,35 +1,15 @@
 local S = {}
 
 local function lexical_setup()
-  -- Lexical LS config
   local lspconfig = require("lspconfig")
-  local configs = require("lspconfig.configs")
-
-  local lexical_config = {
-    filetypes = { "elixir", "eelixir", "heex", "surface", },
-    cmd = { "/Users/jyscao/programming/elixir-practice/lexical/_build/dev/package/lexical/bin/start_lexical.sh" },
-    settings = {},
-  }
-
-  if not configs.lexical then
-    configs.lexical = {
-      default_config = {
-        filetypes = lexical_config.filetypes,
-        cmd = lexical_config.cmd,
-        root_dir = function(fname)
-          return lspconfig.util.root_pattern("mix.exs", ".git")(fname) or vim.loop.os_homedir()
-        end,
-        -- optional settings
-        settings = lexical_config.settings,
-      },
-    }
-  end
-
-  lspconfig.lexical.setup({
-    on_attach = function ()
-      print("Lexical has started.")
+  lspconfig.lexical.setup {
+    cmd = { vim.fn.stdpath("data") .. "/mason/packages/lexical/lexical" },
+    root_dir = function(fname)
+      return lspconfig.util.root_pattern("mix.exs", ".git")(fname) or vim.loop.cwd()
     end,
-  })
+    filetypes = { "elixir", "eelixir", "heex" },
+    settings = {}   -- optional settings
+  }
 end
 
 -- function S.init()
@@ -118,6 +98,32 @@ function S.config()
         telemetry = { enable = false },
       },
     },
+
+
+    -- TODO: language servers/formatters/linters to review:
+    --
+    -- Elixir:
+    -- * elixir-lang/expert
+    --
+    -- Dart:
+    -- * serverpod/lsp_server
+    -- * dcm (from dcm.dev)
+    --
+    -- Nix:
+    -- * oxalica/nil
+    -- * nix-community/nixd
+    -- * NixOS/nixfmt
+    -- * kamadorueda/alejandra
+    --
+    -- VimScript:
+    -- * prabirshrestha/vim-lsp
+    -- * Vimjas/vint
+    --
+    -- ## additional servers in Mason's registry ##
+    -- review LS for existings: C#, Lua, PHP, Python
+    -- programming: AWK, C/C++, F#, Fennel, Erlang, Hoon, Julia, Powershell, R, SQL, Zig
+    -- markups: Markdown, CSS, HTML, HTMX, Jinja, LaTeX
+    -- config & data: HCL/Terraform, JSON, Nginx, Protobuf, systemd, TOML, XML, YAML
   }
 
   -- Setup neovim lua configuration
@@ -145,7 +151,14 @@ function S.config()
     end
   }
 
-  lexical_setup()   -- manually setup Lexical LS w/o Mason; TODO: add Lexical to Mason Registry
+  -- TODO: figure out how to config & setup automatically
+  lexical_setup()   -- manually setup Lexical LS w/o Mason
+
+
+  -- TODO: simplify LSP servers configurations & setups by reviewing best practices mentioned in:
+  -- * neovim/nvim-lspconfig
+  -- * williamboman/mason.nvim
+  -- * williamboman/mason-lspconfig.nvim
 end
 
 S.event = { "BufRead", "BufNewFile" }
