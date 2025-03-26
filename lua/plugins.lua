@@ -103,6 +103,7 @@ local specifications = {
   _("toppair/peek.nvim"),                     -- Markdown preview plugin built using Deno
   _("epwalsh/obsidian.nvim"),                 -- Complement to Obsidian application by writing and navigating Obsidian vaults
   -- _("renerocksai/telekasten.nvim"),           -- Telescope-based plugin for working with a markdown zettelkasten
+  _("kndndrj/nvim-dbee"),                     -- Interactive database client for Neovim
 
   -- [[Meta Plugins for Neovim Config & Plugins ]]
   _("tpope/vim-scriptease"),                  -- A Vim plugin for Vim plugins

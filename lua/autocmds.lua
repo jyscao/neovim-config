@@ -32,7 +32,7 @@ vim.api.nvim_create_autocmd({'BufWinEnter', 'WinResized'}, {
 local focused_window_group = vim.api.nvim_create_augroup('FocusedWindow', { clear = true })
 vim.api.nvim_create_autocmd({ 'VimEnter', 'WinEnter', 'BufWinEnter'}, {
   callback = function()
-    if not list_contains({'help', 'lspinfo', 'man',}, vim.bo.filetype) then
+    if not list_contains({'help', 'lspinfo', 'man', 'dbee',}, vim.bo.filetype) then
       vim.wo.colorcolumn    = '100'
       vim.wo.relativenumber = true
       -- if relativenumber is applied w/o filtering out help files, then
