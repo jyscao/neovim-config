@@ -104,6 +104,7 @@ local specifications = {
   _("epwalsh/obsidian.nvim"),                 -- Complement to Obsidian application by writing and navigating Obsidian vaults
   -- _("renerocksai/telekasten.nvim"),           -- Telescope-based plugin for working with a markdown zettelkasten
   _("kndndrj/nvim-dbee"),                     -- Interactive database client for Neovim
+  _("rest-nvim/rest.nvim"),                   -- A very fast, powerful, extensible and asynchronous Neovim HTTP client
 
   -- [[Meta Plugins for Neovim Config & Plugins ]]
   _("tpope/vim-scriptease"),                  -- A Vim plugin for Vim plugins
