@@ -22,8 +22,6 @@ local specifications = {
   _("tpope/vim-fugitive"),                    -- A Git wrapper so awesome, it should be illegal
   _("tpope/vim-rhubarb"),                     -- GitHub extension for vim-fugitive
   _("lewis6991/gitsigns.nvim"),               -- Git integration for buffers
-  -- _("NeogitOrg/neogit"),                      -- An interactive and powerful Git interface for Neovim, inspired by Magit
-  -- _("sindrets/diffview.nvim"),                -- Single tabpage interface for easily cycling through diffs for all modified files for any git rev
 
   -- [[ Editing Improvements ]]
   _("AndrewRadev/linediff.vim"),              -- Perform diffs on blocks of code
@@ -33,16 +31,12 @@ local specifications = {
   _("utilyre/sentiment.nvim"),                -- Enhanced matchparen.vim plugin for Neovim (archived on Jan 9, 2025)
   _("windwp/nvim-autopairs"),                 -- Powerful autopair plugin that supports multiple characters
   _("kylechui/nvim-surround"),                -- Add/change/delete surrounding delimiter pairs with ease
-  -- _("echasnovski/mini.surround"),             -- Fast and feature-rich surround actions
   _("ntpeters/vim-better-whitespace"),        -- Better whitespace highlighting for Vim
-  -- _("tenxsoydev/tabs-vs-spaces.nvim"),        -- Hint and fix deviating indentation
 
   -- [[ Motion Improvements ]]
   _("ggandor/leap.nvim"),                     -- Motion plugin building & improving on vim-sneak
   _("ggandor/flit.nvim"),                     -- Enhanced f/t motions for Leap
   _("chrisgrieser/nvim-spider"),              -- Move by subwords and skip insignificant punctuation
-  -- _("smoka7/hop.nvim"),                       -- EasyMotion-like plugin allowing you to jump anywhere in a document with as few keystrokes as possible
-  -- _("rlane/pounce.nvim"),                     -- Incremental fuzzy search motion plugin for Neovim
 
   -- [[ IDE Core ]]
   _("vim-ctrlspace/vim-ctrlspace"),           -- Workspace Manager: buffers, tabs, files, workspace, bookmarks
@@ -52,8 +46,6 @@ local specifications = {
   _("nvim-telescope/telescope.nvim"),         -- Ultimate Neovim fuzzy finder: find, filter, preview, pick
   _("nvim-treesitter/nvim-treesitter"),       -- Provides simple & easy way to use the tree-sitter interface, and some basic functionality (e.g. highlighting)
 
-  -- [[ AI/LLM Assistance ]]
-
   -- [[ Aesthetics ]]
   _("zaldih/themery.nvim"),                   -- Colorscheme picker with live preview and persistence for neovim
   _("navarasu/onedark.nvim"),                 -- Atom's One Dark and Light theme
@@ -62,7 +54,6 @@ local specifications = {
   _("rebelot/kanagawa.nvim"),                 -- Inspired by the colors from the famous painting of Katsushika Hokusai
   _("EdenEast/nightfox.nvim"),                -- A highly customizable theme; supports LSP, treesitter & variety of plugins
   _("nvim-lualine/lualine.nvim"),             -- A blazing fast and easy to configure neovim statusline plugin written in pure lua
-  -- _("nvim-tree/nvim-web-devicons"),           -- Provides Nerd Font icons (glyphs) for use by neovim plugins
 
   -- [[ UI Improvements ]]
   _("lukas-reineke/indent-blankline.nvim"),   -- Add indentation guides even on blank lines
@@ -71,8 +62,6 @@ local specifications = {
 
   -- [[ Terminal Integrations ]]
   _("willothy/flatten.nvim"),                 -- Open files & command output in current neovim instance
-  -- _("akinsho/toggleterm.nvim"),               -- Persist & toggle multiple terminals during an editing session
-  -- _("mrjones2014/smart-splits.nvim"),         -- Directional navigation & resizing of Neovim + tmux splits
 
   -- [[ Enhancements to Built-ins ]]
   _("jyscao/ventana.nvim"),                   -- Convenient flips & shifts for your windows layout
@@ -81,23 +70,12 @@ local specifications = {
   _("tpope/vim-eunuch"),                      -- Helpers for UNIX
   _("stevearc/oil.nvim"),                     -- Neovim file explorer: edit your filesystem like a buffer
   _("gennaro-tedesco/nvim-peekup"),           -- Dynamically interact with vim registers
-  -- _("kevinhwang91/nvim-bqf"),                 -- Better quickfix window in Neovim
-  -- _("folke/trouble.nvim"),                    -- A pretty diagnostics, references, telescope results, quickfix and location list
-  -- _("kwkarlwang/bufresize.nvim"),             -- Keep split dimensions in proportion when terminal window is resized
-  -- _("famiu/bufdelete.nvim"),                  -- Delete buffers w/o losing window layout (archived on Feb 17, 2025)
-  -- _("nyngwang/NeoNoName.lua"),                -- Preserves layout on buffer deletion
-  -- _("anuvyklack/windows.nvim"),               -- Automatically expand width of the current window, then restores it after
-  -- _("sindrets/winshift.nvim"),                -- Rearrange your windows with ease
-  -- _("yorickpeterse/nvim-window"),             -- Easily jump between windows interactively
 
   -- [[ Added Support for Languages & Development Environments ]]
   _("elixir-tools/elixir-tools.nvim"),        -- Provides NextLS & ElixirLS installation & configuration, and :Mix command
   _("emmanueltouzery/elixir-extras.nvim"),    -- View Elixir docs in telescope & mark multi-clause functions
   _("nvim-flutter/flutter-tools.nvim"),       -- Tools to help create flutter apps in Neovim using the native LSP
   _("wojciech-kulik/xcodebuild.nvim"),        -- Neovim plugin to Build, Debug, and Test applications created for Apple devices
-  -- _("cjrh/vim-conda"),                        -- Change conda environments inside Vim (deprecated; use ubaldot/vim-conda-activate instead)
-  -- _("ubaldot/vim-conda-activate"),            -- Activate Conda environments in Vim
-  -- _("vlime/vlime"),                           -- Common Lisp dev environment for Vim and Neovim; NOTE: also see "HiPhish/nvim-cmp-vlime"
 
   -- [[ External Tools Integrations ]]
   _("toppair/peek.nvim"),                     -- Markdown preview plugin built using Deno
@@ -108,17 +86,6 @@ local specifications = {
 
   -- [[ Meta Plugins for Neovim Config & Plugin Development ]]
   _("tpope/vim-scriptease"),                  -- A Vim plugin for Vim plugins
-  -- _("b0o/mapx.nvim"),                         -- A better way to create key mappings in Neovim (archived on Jun 5, 2024)
-  -- _("tenxsoydev/nx.nvim"),                    -- Utility wrapper for more convenience w/ Lua keymaps, highlights, autocommands & options
-
-
-
-  -- [[ New Plugins -> to be organized]]
-  --
-  -- _("tpope/vim-projectionist"),   -- Provides granular project configuration using "projections"
-  -- _("kndndrj/nvim-projector"),    -- Better project-specific configs for nvim-dap w/ telescope
-  -- _("folke/snacks.nvim"),         -- A collection of QoL plugins for Neovim
-  -- _("stevearc/dressing.nvim"),    -- Improve the default vim.ui interfaces (archived on Feb 12, 2025)
 }
 
 local lazy_opts = {
