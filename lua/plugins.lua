@@ -70,6 +70,7 @@ local specifications = {
   _("tpope/vim-eunuch"),                      -- Helpers for UNIX
   _("stevearc/oil.nvim"),                     -- Neovim file explorer: edit your filesystem like a buffer
   _("gennaro-tedesco/nvim-peekup"),           -- Dynamically interact with vim registers
+  _("OXY2DEV/helpview.nvim"),                 -- A hackable & fancy vimdoc/help file viewer for Neovim
 
   -- [[ Added Support for Languages & Development Environments ]]
   _("elixir-tools/elixir-tools.nvim"),        -- Provides NextLS & ElixirLS installation & configuration, and :Mix command
