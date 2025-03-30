@@ -99,14 +99,14 @@ local specifications = {
   -- _("ubaldot/vim-conda-activate"),            -- Activate Conda environments in Vim
   -- _("vlime/vlime"),                           -- Common Lisp dev environment for Vim and Neovim; NOTE: also see "HiPhish/nvim-cmp-vlime"
 
-  -- [[ External Integrations ]]
+  -- [[ External Tools Integrations ]]
   _("toppair/peek.nvim"),                     -- Markdown preview plugin built using Deno
   _("epwalsh/obsidian.nvim"),                 -- Complement to Obsidian application by writing and navigating Obsidian vaults
   -- _("renerocksai/telekasten.nvim"),           -- Telescope-based plugin for working with a markdown zettelkasten
   _("kndndrj/nvim-dbee"),                     -- Interactive database client for Neovim
   _("rest-nvim/rest.nvim"),                   -- A very fast, powerful, extensible and asynchronous Neovim HTTP client
 
-  -- [[Meta Plugins for Neovim Config & Plugins ]]
+  -- [[ Meta Plugins for Neovim Config & Plugin Development ]]
   _("tpope/vim-scriptease"),                  -- A Vim plugin for Vim plugins
   -- _("b0o/mapx.nvim"),                         -- A better way to create key mappings in Neovim (archived on Jun 5, 2024)
   -- _("tenxsoydev/nx.nvim"),                    -- Utility wrapper for more convenience w/ Lua keymaps, highlights, autocommands & options
